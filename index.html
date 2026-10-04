@@ -1,1 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>~* my little KIR journal ~</title>
+
+<style>
+/* =========================================================
+   BASIC OLD WEB STYLE
+   ========================================================= */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background:
+        linear-gradient(#d7d7d7 1px, transparent 1px),
+        linear-gradient(90deg, #d7d7d7 1px, transparent 1px);
+    background-size: 18px 18px;
+    background-color: #eeeeee;
+
+    color: #222;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+/* MAIN PAGE */
+
+.page {
+    width: 760px;
+    margin: 18px auto;
+    background: white;
+    border: 2px solid #555;
+    box-shadow: 4px 4px 0 #888;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background: linear-gradient(#416b91, #173b5c);
+    color: white;
+    padding: 15px 18px 13px;
+    border-bottom: 3px solid #111;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.site-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px #111;
+}
+
+.site-subtitle {
+    font-size: 11px;
+    margin-top: 3px;
+    color: #dcecff;
+}
+
+.header-date {
+    text-align: right;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: #d7e8f8;
+}
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+
+.marquee {
+    background: #ffffcc;
+    border-bottom: 1px solid #888;
+    color: #000080;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Courier New", monospace;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 16s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+    background: #cfcfcf;
+    padding: 5px;
+    border-bottom: 2px solid #777;
+    text-align: center;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 1px;
+
+    background: #e8e8e8;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #555;
+    border-bottom: 2px solid #555;
+
+    color: #000080;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.nav a:active {
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+/* =========================================================
+   CONTENT LAYOUT
+   ========================================================= */
+
+.content {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    gap: 12px;
+    padding: 12px;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    font-size: 11px;
+}
+
+.side-box {
+    margin-bottom: 12px;
+    border: 1px solid #777;
+    background: #f4f4f4;
+}
+
+.side-title {
+    background: #315a7d;
+    color: white;
+    font-weight: bold;
+    padding: 5px 7px;
+    font-size: 11px;
+}
+
+.side-content {
+    padding: 7px;
+    line-height: 1.5;
+}
+
+.side-content a {
+    color: #0000cc;
+}
+
+.side-content ul {
+    padding-left: 17px;
+    margin: 4px 0;
+}
+
+/* =========================================================
+   MAIN BLOG
+   ========================================================= */
+
+.main {
+    min-width: 0;
+}
+
+.welcome {
+    border: 1px solid #999;
+    background: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.welcome h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #173b5c;
+    font-size: 23px;
+    margin: 0 0 5px;
+}
+
+.welcome p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   BLOG POSTS
+   ========================================================= */
+
+.post {
+    border: 1px solid #888;
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+.post-header {
+    background: #dbe7f0;
+    border-bottom: 1px solid #999;
+    padding: 7px 9px;
+}
+
+.post-title {
+    color: #000080;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.post-date {
+    color: #555;
+    font-size: 10px;
+    font-family: "Courier New", monospace;
+    margin-top: 3px;
+}
+
+.post-body {
+    padding: 10px;
+    line-height: 1.65;
+}
+
+.post-body p {
+    margin-top: 0;
+}
+
+.post-body a {
+    color: #0000cc;
+}
+
+.signature {
+    color: #555;
+    font-family: "Comic Sans MS", cursive;
+    margin-top: 12px;
+}
+
+/* =========================================================
+   PHOTO PLACEHOLDER
+   ========================================================= */
+
+.photo {
+    border: 2px solid #777;
+    background: #ddd;
+    padding: 4px;
+    width: 180px;
+    margin: 8px auto;
+    text-align: center;
+    color: #555;
+    font-family: "Courier New", monospace;
+}
+
+.photo-inner {
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ccc,
+            #ccc 5px,
+            #ddd 5px,
+            #ddd 10px
+        );
+}
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.quote {
+    margin: 10px 18px;
+    padding: 7px 10px;
+    border-left: 5px solid #315a7d;
+    background: #eef5fa;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.old-list {
+    background: #ffffdd;
+    border: 1px dashed #999;
+    padding: 8px 8px 8px 28px;
+}
+
+/* =========================================================
+   GUESTBOOK
+   ========================================================= */
+
+.guestbook {
+    text-align: center;
+    border: 2px dashed #888;
+    background: #fffef0;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.guestbook a {
+    color: #0000ee;
+    font-weight: bold;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    border-top: 3px double #555;
+    background: #ddd;
+    text-align: center;
+    padding: 12px;
+    font-size: 10px;
+    color: #444;
+}
+
+.badge {
+    display: inline-block;
+    width: 88px;
+    height: 31px;
+    line-height: 31px;
+    margin: 4px;
+
+    background: #173b5c;
+    color: white;
+
+    border-top: 2px solid #8db4d2;
+    border-left: 2px solid #8db4d2;
+    border-right: 2px solid #111;
+    border-bottom: 2px solid #111;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   CURSOR-LIKE BLINK
+   ========================================================= */
+
+.blink {
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        visibility: hidden;
+    }
+}
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+.counter {
+    display: inline-block;
+    background: black;
+    color: #00ff00;
+    padding: 3px 6px;
+    font-family: "Courier New", monospace;
+    letter-spacing: 2px;
+    border: 2px inset #aaa;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+    body {
+        background: #eeeeee;
+    }
+
+    .page {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-top {
+        display: block;
+    }
+
+    .header-date {
+        text-align: left;
+        margin-top: 8px;
+    }
+
+    .site-title {
+        font-size: 25px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .nav a {
+        margin-bottom: 3px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-top">
+
+            <div>
+                <div class="site-title">
+                    ~* my little KIR journal *~
+                </div>
+
+                <div class="site-subtitle">
+                    random notes, stories & memories from my KIR days
+                </div>
+            </div>
+
+            <div class="header-date">
+                online since 2026<br>
+                [ personal homepage ]
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <span>
+            *** welcome to my little corner of the internet! ***
+            thanks for visiting my KIR journal :)
+            &nbsp;&nbsp;&nbsp;
+            please sign my guestbook!!
+        </span>
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT ME</a>
+        <a href="#kir">MY KIR</a>
+        <a href="#stories">STORIES</a>
+        <a href="#photos">PHOTOS</a>
+        <a href="#archive">ARCHIVE</a>
+        <a href="#guestbook">GUESTBOOK</a>
+
+    </nav>
+
+
+    <!-- CONTENT -->
+    <div class="content">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="side-box" id="about">
+
+                <div class="side-title">
+                    :: ABOUT ME
+                </div>
+
+                <div class="side-content">
+
+                    <b>hello!</b><br><br>
+
+                    i'm just a student who
+                    happens to spend some
+                    of my time doing
+                    interesting things in KIR.
+
+                    <br><br>
+
+                    this isn't an official
+                    KIR website.
+
+                    <br><br>
+
+                    it's just my little
+                    personal journal about
+                    the experience.
+
+                </div>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <div class="side-title">
+                    :: CURRENTLY
+                </div>
+
+                <div class="side-content">
+
+                    <b>doing:</b><br>
+                    KIR stuff<br><br>
+
+                    <b>learning:</b><br>
+                    research & experiments<br><br>
+
+                    <b>listening:</b><br>
+                    random playlists<br><br>
+
+                    <b>mood:</b><br>
+                    <span class="blink">_</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <div class="side-title">
+                    :: MY KIR
+                </div>
+
+                <div class="side-content">
+
+                    <ul>
+                        <li>meetings</li>
+                        <li>experiments</li>
+                        <li>research</li>
+                        <li>projects</li>
+                        <li>competitions</li>
+                        <li>random chaos</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <div class="side-title">
+                    :: SITE STATS
+                </div>
+
+                <div class="side-content">
+
+                    visitors:
+
+                    <br>
+
+                    <span class="counter" id="counter">
+                        000000
+                    </span>
+
+                    <br><br>
+
+                    pages: 01<br>
+                    updates: whenever<br>
+                    status: online
+
+                </div>
+
+            </div>
+
+
+            <div class="side-box">
+
+                <div class="side-title">
+                    :: LINKS
+                </div>
+
+                <div class="side-content">
+
+                    <a href="#kir">
+                        my KIR notes
+                    </a><br>
+
+                    <a href="#stories">
+                        old stories
+                    </a><br>
+
+                    <a href="#photos">
+                        photo corner
+                    </a><br>
+
+                    <a href="#guestbook">
+                        guestbook
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main" id="home">
+
+
+            <!-- WELCOME -->
+            <section class="welcome">
+
+                <h1>
+                    welcome to my little corner :)
+                </h1>
+
+                <p>
+                    Hi! You've somehow found my personal KIR journal.
+                    This is where I write down random experiences,
+                    thoughts, experiments, stories, and things I
+                    probably would've forgotten otherwise.
+                </p>
+
+                <p>
+                    KIR has become one of those places where I can
+                    actually try things, make mistakes, learn something,
+                    and occasionally wonder why my experiment decided
+                    not to cooperate.
+                </p>
+
+                <p>
+                    So yeah... welcome!
+                </p>
+
+            </section>
+
+
+            <!-- POST 1 -->
+            <article class="post" id="kir">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        Welcome to my KIR Journal!
+                    </div>
+
+                    <div class="post-date">
+                        posted: September 2026
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        I decided to make this little website because
+                        there are way too many things happening during
+                        KIR that are actually worth remembering.
+                    </p>
+
+                    <p>
+                        Not necessarily huge achievements.
+                        Sometimes it's just a random discussion,
+                        an experiment that failed, an idea that suddenly
+                        appeared, or a really long afternoon trying to
+                        figure something out.
+                    </p>
+
+                    <div class="quote">
+                        "Sometimes the most useful part of research
+                        is finding out that your first idea was wrong."
+                    </div>
+
+                    <p>
+                        That's basically what this website is about.
+                    </p>
+
+                    <p class="signature">
+                        — me, probably writing this instead of doing
+                        the actual experiment
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 2 -->
+            <article class="post" id="stories">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        Why I Joined KIR in the First Place
+                    </div>
+
+                    <div class="post-date">
+                        posted: September 2026
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        Honestly, I don't think I fully understood
+                        what KIR would be like when I first got involved.
+                    </p>
+
+                    <p>
+                        At first, the word "research" sounded like
+                        something extremely serious.
+                        Papers. Data. Experiments. Complicated words.
+                    </p>
+
+                    <p>
+                        But after actually participating, I realized
+                        that research can also start from something
+                        really simple:
+                    </p>
+
+                    <ul class="old-list">
+
+                        <li>
+                            "Why does this happen?"
+                        </li>
+
+                        <li>
+                            "Can this be improved?"
+                        </li>
+
+                        <li>
+                            "What if I tried this?"
+                        </li>
+
+                        <li>
+                            "Okay... why did that fail?"
+                        </li>
+
+                    </ul>
+
+                    <p>
+                        And somehow, those questions can turn into
+                        an actual project.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 3 -->
+            <article class="post">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        A Normal Afternoon at KIR
+                    </div>
+
+                    <div class="post-date">
+                        posted: August 2026
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        A normal KIR afternoon usually doesn't look
+                        particularly impressive from the outside.
+                    </p>
+
+                    <p>
+                        A table.
+                        Some papers.
+                        A few phones or laptops.
+                        People discussing random ideas.
+                        Someone searching for information.
+                    </p>
+
+                    <div class="photo">
+
+                        <div class="photo-inner">
+                            [ photo goes here ]
+                        </div>
+
+                        <small>
+                            IMG_0001.JPG
+                        </small>
+
+                    </div>
+
+                    <p>
+                        But that's actually one of my favorite things
+                        about it.
+                    </p>
+
+                    <p>
+                        There's always something happening.
+                        Sometimes everyone is focused.
+                        Sometimes we're completely stuck.
+                        And sometimes a completely random conversation
+                        somehow turns into the best idea of the day.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 4 -->
+            <article class="post">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        The Experiment That Didn't Go According to Plan
+                    </div>
+
+                    <div class="post-date">
+                        posted: August 2026
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        This is probably one of the most important
+                        things KIR has taught me.
+                    </p>
+
+                    <p>
+                        An experiment doesn't always work.
+                    </p>
+
+                    <p>
+                        Sometimes the result is weird.
+                        Sometimes the material doesn't behave the way
+                        you expected.
+                        Sometimes the numbers don't make sense.
+                    </p>
+
+                    <p>
+                        And sometimes you stare at the result for five
+                        minutes thinking:
+                    </p>
+
+                    <div class="quote">
+                        "...okay, what happened here?"
+                    </div>
+
+                    <p>
+                        But that's also part of the process.
+                    </p>
+
+                    <p>
+                        Instead of immediately calling it a failure,
+                        you can ask why it happened.
+                        Maybe something was wrong with the method.
+                        Maybe the variables weren't controlled.
+                        Maybe the original idea needs to change.
+                    </p>
+
+                    <p>
+                        And suddenly, the failed experiment becomes
+                        another thing to learn from.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 5 -->
+            <article class="post">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        Things KIR Has Taught Me So Far
+                    </div>
+
+                    <div class="post-date">
+                        posted: July 2026
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        If I had to make a small list of things I've
+                        learned from KIR, it would probably look like
+                        this:
+                    </p>
+
+                    <ol class="old-list">
+
+                        <li>
+                            Don't assume your first idea is correct.
+                        </li>
+
+                        <li>
+                            Write things down.
+                        </li>
+
+                        <li>
+                            Data is more useful than guessing.
+                        </li>
+
+                        <li>
+                            A failed experiment can still teach you
+                            something.
+                        </li>
+
+                        <li>
+                            Research takes patience.
+                        </li>
+
+                        <li>
+                            Working with other people changes your idea.
+                        </li>
+
+                        <li>
+                            Sometimes you need to start over.
+                        </li>
+
+                    </ol>
+
+                    <p>
+                        And probably the most important one:
+                    </p>
+
+                    <div class="quote">
+                        Don't be afraid to ask "why?"
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTOS -->
+            <article class="post" id="photos">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        My Very Official Photo Archive™
+                    </div>
+
+                    <div class="post-date">
+                        updated whenever I remember
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <p>
+                        A collection of completely normal photographs
+                        from my KIR journey.
+                    </p>
+
+                    <div style="
+                        display:flex;
+                        flex-wrap:wrap;
+                        justify-content:center;
+                        gap:10px;
+                    ">
+
+                        <div class="photo" style="margin:0;">
+                            <div class="photo-inner">
+                                PHOTO 01
+                            </div>
+                            <small>kir_day.jpg</small>
+                        </div>
+
+                        <div class="photo" style="margin:0;">
+                            <div class="photo-inner">
+                                PHOTO 02
+                            </div>
+                            <small>experiment.jpg</small>
+                        </div>
+
+                        <div class="photo" style="margin:0;">
+                            <div class="photo-inner">
+                                PHOTO 03
+                            </div>
+                            <small>meeting.jpg</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARCHIVE -->
+            <article class="post" id="archive">
+
+                <div class="post-header">
+
+                    <div class="post-title">
+                        Site Archive
+                    </div>
+
+                    <div class="post-date">
+                        old stuff lives here
+                    </div>
+
+                </div>
+
+                <div class="post-body">
+
+                    <b>2026</b>
+
+                    <ul>
+
+                        <li>
+                            September — Welcome to my KIR Journal
+                        </li>
+
+                        <li>
+                            September — Why I Joined KIR
+                        </li>
+
+                        <li>
+                            August — A Normal Afternoon at KIR
+                        </li>
+
+                        <li>
+                            August — The Experiment
+                        </li>
+
+                        <li>
+                            July — Things KIR Has Taught Me
+                        </li>
+
+                    </ul>
+
+                    <br>
+
+                    <b>older entries</b>
+
+                    <p>
+                        coming soon... maybe.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- GUESTBOOK -->
+            <section class="guestbook" id="guestbook">
+
+                <b>★ YOU FOUND THE GUESTBOOK ★</b>
+
+                <p>
+                    Thanks for stopping by my tiny corner of the internet!
+                </p>
+
+                <a href="mailto:your@email.com">
+                    [ SIGN MY GUESTBOOK ]
+                </a>
+
+                <br><br>
+
+                <small>
+                    please don't spam :)
+                </small>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div>
+
+            <span class="badge">
+                BEST VIEWED
+            </span>
+
+            <span class="badge">
+                HTML 4.01
+            </span>
+
+            <span class="badge">
+                KIR JOURNAL
+            </span>
+
+        </div>
+
+        <br>
+
+        © 2026 my little KIR journal
+
+        <br>
+
+        made by me, for me, and anyone curious enough to read it.
+
+        <br><br>
+
+        <span style="font-family:'Courier New', monospace;">
+            [ this page is permanently under construction ]
+        </span>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   OLD SCHOOL VISITOR COUNTER
+   ========================================================= */
+
+let visits = localStorage.getItem("kirJournalVisits");
+
+if (!visits) {
+    visits = 1;
+} else {
+    visits = parseInt(visits) + 1;
+}
+
+localStorage.setItem("kirJournalVisits", visits);
+
+document.getElementById("counter").textContent =
+    String(visits).padStart(6, "0");
+
+
+/* =========================================================
+   OLD SCHOOL SMOOTH-ish ANCHOR
+   ========================================================= */
+
+document.querySelectorAll(".nav a").forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
