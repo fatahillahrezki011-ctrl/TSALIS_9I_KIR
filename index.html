@@ -1,14 +1,15 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>~* my little KIR journal ~</title>
+<title>~* jurnal kecil KIR-ku ~</title>
 
 <style>
 /* =========================================================
-   BASIC OLD WEB STYLE
+   GAYA OLD WEB
    ========================================================= */
 
 html, body {
@@ -28,7 +29,7 @@ body {
     font-size: 12px;
 }
 
-/* MAIN PAGE */
+/* HALAMAN UTAMA */
 
 .page {
     width: 760px;
@@ -100,13 +101,14 @@ body {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-100%);
     }
 }
 
 /* =========================================================
-   NAVIGATION
+   NAVIGASI
    ========================================================= */
 
 .nav {
@@ -141,7 +143,7 @@ body {
 }
 
 /* =========================================================
-   CONTENT LAYOUT
+   LAYOUT KONTEN
    ========================================================= */
 
 .content {
@@ -188,7 +190,7 @@ body {
 }
 
 /* =========================================================
-   MAIN BLOG
+   BLOG UTAMA
    ========================================================= */
 
 .main {
@@ -215,7 +217,7 @@ body {
 }
 
 /* =========================================================
-   BLOG POSTS
+   POSTINGAN
    ========================================================= */
 
 .post {
@@ -264,7 +266,7 @@ body {
 }
 
 /* =========================================================
-   PHOTO PLACEHOLDER
+   FOTO
    ========================================================= */
 
 .photo {
@@ -295,7 +297,7 @@ body {
 }
 
 /* =========================================================
-   QUOTE
+   KUTIPAN
    ========================================================= */
 
 .quote {
@@ -318,7 +320,7 @@ body {
 }
 
 /* =========================================================
-   GUESTBOOK
+   BUKU TAMU
    ========================================================= */
 
 .guestbook {
@@ -368,7 +370,7 @@ body {
 }
 
 /* =========================================================
-   CURSOR-LIKE BLINK
+   KEDIP
    ========================================================= */
 
 .blink {
@@ -382,24 +384,11 @@ body {
 }
 
 /* =========================================================
-   COUNTER
-   ========================================================= */
-
-.counter {
-    display: inline-block;
-    background: black;
-    color: #00ff00;
-    padding: 3px 6px;
-    font-family: "Courier New", monospace;
-    letter-spacing: 2px;
-    border: 2px inset #aaa;
-}
-
-/* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width: 800px) {
+
     body {
         background: #eeeeee;
     }
@@ -454,18 +443,20 @@ body {
         <div class="header-top">
 
             <div>
+
                 <div class="site-title">
-                    ~* my little KIR journal *~
+                    ~* jurnal kecil KIR-ku *~
                 </div>
 
                 <div class="site-subtitle">
-                    random notes, stories & memories from my KIR days
+                    catatan, cerita & kenangan dari perjalanan KIR-ku
                 </div>
+
             </div>
 
             <div class="header-date">
-                online since 2026<br>
-                [ personal homepage ]
+                aktif sejak 2026<br>
+                [ halaman pribadi ]
             </div>
 
         </div>
@@ -475,169 +466,93 @@ body {
 
     <!-- MARQUEE -->
     <div class="marquee">
+
         <span>
-            *** welcome to my little corner of the internet! ***
-            thanks for visiting my KIR journal :)
+            *** selamat datang di sudut kecil internetku! ***
+            terima kasih sudah berkunjung ke jurnal KIR-ku :)
             &nbsp;&nbsp;&nbsp;
-            please sign my guestbook!!
+            jangan lupa mampir ke buku tamu!!
         </span>
+
     </div>
 
 
-    <!-- NAVIGATION -->
+    <!-- NAVIGASI -->
     <nav class="nav">
 
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT ME</a>
-        <a href="#kir">MY KIR</a>
-        <a href="#stories">STORIES</a>
-        <a href="#photos">PHOTOS</a>
-        <a href="#archive">ARCHIVE</a>
-        <a href="#guestbook">GUESTBOOK</a>
+        <a href="#home">BERANDA</a>
+        <a href="#about">TENTANG AKU</a>
+        <a href="#stories">CERITA</a>
+        <a href="#photos">FOTO</a>
+        <a href="#archive">ARSIP</a>
+        <a href="#guestbook">BUKU TAMU</a>
 
     </nav>
 
 
-    <!-- CONTENT -->
+    <!-- KONTEN -->
     <div class="content">
 
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
 
+            <!-- TENTANG AKU -->
             <div class="side-box" id="about">
 
                 <div class="side-title">
-                    :: ABOUT ME
+                    :: TENTANG AKU
                 </div>
 
                 <div class="side-content">
 
-                    <b>hello!</b><br><br>
+                    <b>halo!</b><br><br>
 
-                    i'm just a student who
-                    happens to spend some
-                    of my time doing
-                    interesting things in KIR.
-
-                    <br><br>
-
-                    this isn't an official
-                    KIR website.
+                    aku cuma seorang pelajar
+                    yang menghabiskan sebagian
+                    waktuku untuk melakukan
+                    berbagai hal menarik di KIR.
 
                     <br><br>
 
-                    it's just my little
-                    personal journal about
-                    the experience.
+                    ini bukan website resmi KIR.
+
+                    <br><br>
+
+                    ini cuma jurnal kecil
+                    pribadiku tentang
+                    pengalaman selama
+                    mengikuti KIR.
 
                 </div>
 
             </div>
 
 
+            <!-- SAAT INI -->
             <div class="side-box">
 
                 <div class="side-title">
-                    :: CURRENTLY
+                    :: SAAT INI
                 </div>
 
                 <div class="side-content">
 
-                    <b>doing:</b><br>
-                    KIR stuff<br><br>
+                    <b>sedang:</b><br>
+                    mengurus KIR<br><br>
 
-                    <b>learning:</b><br>
-                    research & experiments<br><br>
+                    <b>belajar:</b><br>
+                    penelitian & eksperimen<br><br>
 
-                    <b>listening:</b><br>
-                    random playlists<br><br>
+                    <b>mendengarkan:</b><br>
+                    playlist random<br><br>
 
-                    <b>mood:</b><br>
+                    <b>suasana hati:</b><br>
                     <span class="blink">_</span>
 
                 </div>
 
             </div>
-
-
-            <div class="side-box">
-
-                <div class="side-title">
-                    :: MY KIR
-                </div>
-
-                <div class="side-content">
-
-                    <ul>
-                        <li>meetings</li>
-                        <li>experiments</li>
-                        <li>research</li>
-                        <li>projects</li>
-                        <li>competitions</li>
-                        <li>random chaos</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <div class="side-box">
-
-                <div class="side-title">
-                    :: SITE STATS
-                </div>
-
-                <div class="side-content">
-
-                    visitors:
-
-                    <br>
-
-                    <span class="counter" id="counter">
-                        000000
-                    </span>
-
-                    <br><br>
-
-                    pages: 01<br>
-                    updates: whenever<br>
-                    status: online
-
-                </div>
-
-            </div>
-
-
-            <div class="side-box">
-
-                <div class="side-title">
-                    :: LINKS
-                </div>
-
-                <div class="side-content">
-
-                    <a href="#kir">
-                        my KIR notes
-                    </a><br>
-
-                    <a href="#stories">
-                        old stories
-                    </a><br>
-
-                    <a href="#photos">
-                        photo corner
-                    </a><br>
-
-                    <a href="#guestbook">
-                        guestbook
-                    </a>
-
-                </div>
-
-            </div>
-
 
         </aside>
 
@@ -646,29 +561,31 @@ body {
         <main class="main" id="home">
 
 
-            <!-- WELCOME -->
+            <!-- SELAMAT DATANG -->
             <section class="welcome">
 
                 <h1>
-                    welcome to my little corner :)
+                    selamat datang di sudut kecilku :)
                 </h1>
 
                 <p>
-                    Hi! You've somehow found my personal KIR journal.
-                    This is where I write down random experiences,
-                    thoughts, experiments, stories, and things I
-                    probably would've forgotten otherwise.
+                    Hai! Kamu entah bagaimana bisa menemukan
+                    jurnal KIR pribadiku. Di sini aku menulis
+                    berbagai pengalaman, pemikiran, eksperimen,
+                    cerita, dan hal-hal yang mungkin akan
+                    kulupakan kalau tidak dicatat.
                 </p>
 
                 <p>
-                    KIR has become one of those places where I can
-                    actually try things, make mistakes, learn something,
-                    and occasionally wonder why my experiment decided
-                    not to cooperate.
+                    KIR menjadi salah satu tempat di mana aku
+                    bisa mencoba berbagai hal, melakukan kesalahan,
+                    belajar sesuatu, dan sesekali bertanya-tanya
+                    kenapa eksperimenku memutuskan untuk tidak
+                    bekerja sama.
                 </p>
 
                 <p>
-                    So yeah... welcome!
+                    Jadi ya... selamat datang!
                 </p>
 
             </section>
@@ -680,11 +597,11 @@ body {
                 <div class="post-header">
 
                     <div class="post-title">
-                        Welcome to my KIR Journal!
+                        Selamat Datang di Jurnal KIR-ku!
                     </div>
 
                     <div class="post-date">
-                        posted: September 2026
+                        diposting: September 2026
                     </div>
 
                 </div>
@@ -692,31 +609,31 @@ body {
                 <div class="post-body">
 
                     <p>
-                        I decided to make this little website because
-                        there are way too many things happening during
-                        KIR that are actually worth remembering.
+                        Aku memutuskan untuk membuat website kecil
+                        ini karena ada terlalu banyak hal yang terjadi
+                        selama KIR yang sebenarnya layak untuk diingat.
                     </p>
 
                     <p>
-                        Not necessarily huge achievements.
-                        Sometimes it's just a random discussion,
-                        an experiment that failed, an idea that suddenly
-                        appeared, or a really long afternoon trying to
-                        figure something out.
+                        Tidak selalu tentang pencapaian besar.
+                        Kadang hanya sebuah diskusi random,
+                        eksperimen yang gagal, ide yang tiba-tiba
+                        muncul, atau sore yang panjang hanya untuk
+                        mencoba memahami sesuatu.
                     </p>
 
                     <div class="quote">
-                        "Sometimes the most useful part of research
-                        is finding out that your first idea was wrong."
+                        "Terkadang bagian paling berguna dari penelitian
+                        adalah mengetahui bahwa ide pertama kita ternyata salah."
                     </div>
 
                     <p>
-                        That's basically what this website is about.
+                        Kurang lebih, itulah alasan website ini dibuat.
                     </p>
 
                     <p class="signature">
-                        — me, probably writing this instead of doing
-                        the actual experiment
+                        — aku, yang mungkin sedang menulis ini
+                        daripada mengerjakan eksperimen
                     </p>
 
                 </div>
@@ -730,11 +647,11 @@ body {
                 <div class="post-header">
 
                     <div class="post-title">
-                        Why I Joined KIR in the First Place
+                        Kenapa Aku Bergabung dengan KIR?
                     </div>
 
                     <div class="post-date">
-                        posted: September 2026
+                        diposting: September 2026
                     </div>
 
                 </div>
@@ -742,45 +659,48 @@ body {
                 <div class="post-body">
 
                     <p>
-                        Honestly, I don't think I fully understood
-                        what KIR would be like when I first got involved.
+                        Sejujurnya, aku tidak benar-benar tahu
+                        seperti apa KIR ketika pertama kali
+                        ikut bergabung.
                     </p>
 
                     <p>
-                        At first, the word "research" sounded like
-                        something extremely serious.
-                        Papers. Data. Experiments. Complicated words.
+                        Awalnya, kata "penelitian" terdengar
+                        sangat serius.
+                        Ada laporan. Data. Eksperimen.
+                        Istilah-istilah yang terdengar rumit.
                     </p>
 
                     <p>
-                        But after actually participating, I realized
-                        that research can also start from something
-                        really simple:
+                        Tapi setelah benar-benar mengikutinya,
+                        aku sadar bahwa penelitian juga bisa
+                        dimulai dari sesuatu yang sangat sederhana:
                     </p>
 
                     <ul class="old-list">
 
                         <li>
-                            "Why does this happen?"
+                            "Kenapa hal ini bisa terjadi?"
                         </li>
 
                         <li>
-                            "Can this be improved?"
+                            "Apakah ini bisa diperbaiki?"
                         </li>
 
                         <li>
-                            "What if I tried this?"
+                            "Bagaimana kalau aku mencoba ini?"
                         </li>
 
                         <li>
-                            "Okay... why did that fail?"
+                            "Oke... kenapa ini malah gagal?"
                         </li>
 
                     </ul>
 
                     <p>
-                        And somehow, those questions can turn into
-                        an actual project.
+                        Dan entah bagaimana, pertanyaan-pertanyaan
+                        sederhana itu bisa berubah menjadi sebuah
+                        proyek nyata.
                     </p>
 
                 </div>
@@ -794,11 +714,11 @@ body {
                 <div class="post-header">
 
                     <div class="post-title">
-                        A Normal Afternoon at KIR
+                        Sore Biasa di KIR
                     </div>
 
                     <div class="post-date">
-                        posted: August 2026
+                        diposting: Agustus 2026
                     </div>
 
                 </div>
@@ -806,22 +726,22 @@ body {
                 <div class="post-body">
 
                     <p>
-                        A normal KIR afternoon usually doesn't look
-                        particularly impressive from the outside.
+                        Sore biasa di KIR sebenarnya tidak terlihat
+                        terlalu istimewa kalau dilihat dari luar.
                     </p>
 
                     <p>
-                        A table.
-                        Some papers.
-                        A few phones or laptops.
-                        People discussing random ideas.
-                        Someone searching for information.
+                        Sebuah meja.
+                        Beberapa kertas.
+                        Beberapa HP atau laptop.
+                        Orang-orang berdiskusi tentang berbagai ide.
+                        Seseorang mencari informasi.
                     </p>
 
                     <div class="photo">
 
                         <div class="photo-inner">
-                            [ photo goes here ]
+                            [ foto di sini ]
                         </div>
 
                         <small>
@@ -831,16 +751,16 @@ body {
                     </div>
 
                     <p>
-                        But that's actually one of my favorite things
-                        about it.
+                        Tapi justru itu salah satu hal yang aku suka.
                     </p>
 
                     <p>
-                        There's always something happening.
-                        Sometimes everyone is focused.
-                        Sometimes we're completely stuck.
-                        And sometimes a completely random conversation
-                        somehow turns into the best idea of the day.
+                        Selalu ada sesuatu yang terjadi.
+                        Kadang semua orang fokus.
+                        Kadang kami benar-benar tidak tahu harus
+                        melakukan apa.
+                        Dan kadang percakapan yang awalnya benar-benar
+                        random malah berubah menjadi ide terbaik hari itu.
                     </p>
 
                 </div>
@@ -854,11 +774,11 @@ body {
                 <div class="post-header">
 
                     <div class="post-title">
-                        The Experiment That Didn't Go According to Plan
+                        Eksperimen yang Tidak Berjalan Sesuai Rencana
                     </div>
 
                     <div class="post-date">
-                        posted: August 2026
+                        diposting: Agustus 2026
                     </div>
 
                 </div>
@@ -866,45 +786,46 @@ body {
                 <div class="post-body">
 
                     <p>
-                        This is probably one of the most important
-                        things KIR has taught me.
+                        Ini mungkin salah satu hal paling penting
+                        yang diajarkan KIR kepadaku.
                     </p>
 
                     <p>
-                        An experiment doesn't always work.
+                        Sebuah eksperimen tidak selalu berhasil.
                     </p>
 
                     <p>
-                        Sometimes the result is weird.
-                        Sometimes the material doesn't behave the way
-                        you expected.
-                        Sometimes the numbers don't make sense.
+                        Kadang hasilnya aneh.
+                        Kadang bahan tidak berperilaku seperti
+                        yang kita harapkan.
+                        Kadang angka-angkanya tidak masuk akal.
                     </p>
 
                     <p>
-                        And sometimes you stare at the result for five
-                        minutes thinking:
+                        Dan kadang kita hanya menatap hasilnya selama
+                        lima menit sambil berpikir:
                     </p>
 
                     <div class="quote">
-                        "...okay, what happened here?"
+                        "...oke, tadi sebenarnya apa yang terjadi?"
                     </div>
 
                     <p>
-                        But that's also part of the process.
+                        Tapi itu juga bagian dari proses.
                     </p>
 
                     <p>
-                        Instead of immediately calling it a failure,
-                        you can ask why it happened.
-                        Maybe something was wrong with the method.
-                        Maybe the variables weren't controlled.
-                        Maybe the original idea needs to change.
+                        Daripada langsung menyebutnya sebagai kegagalan,
+                        kita bisa mencoba mencari tahu kenapa hal itu
+                        terjadi.
+                        Mungkin ada yang salah dengan metode.
+                        Mungkin variabelnya belum dikontrol.
+                        Mungkin ide awalnya memang perlu diubah.
                     </p>
 
                     <p>
-                        And suddenly, the failed experiment becomes
-                        another thing to learn from.
+                        Dan tiba-tiba, eksperimen yang gagal tadi
+                        berubah menjadi sesuatu yang bisa kita pelajari.
                     </p>
 
                 </div>
@@ -918,11 +839,11 @@ body {
                 <div class="post-header">
 
                     <div class="post-title">
-                        Things KIR Has Taught Me So Far
+                        Hal-Hal yang Kiajarkan KIR Kepadaku
                     </div>
 
                     <div class="post-date">
-                        posted: July 2026
+                        diposting: Juli 2026
                     </div>
 
                 </div>
@@ -930,50 +851,51 @@ body {
                 <div class="post-body">
 
                     <p>
-                        If I had to make a small list of things I've
-                        learned from KIR, it would probably look like
-                        this:
+                        Kalau aku harus membuat daftar kecil tentang
+                        hal-hal yang sudah kupelajari dari KIR,
+                        mungkin isinya akan seperti ini:
                     </p>
 
                     <ol class="old-list">
 
                         <li>
-                            Don't assume your first idea is correct.
+                            Jangan menganggap ide pertama pasti benar.
                         </li>
 
                         <li>
-                            Write things down.
+                            Catat semuanya.
                         </li>
 
                         <li>
-                            Data is more useful than guessing.
+                            Data lebih berguna daripada sekadar menebak.
                         </li>
 
                         <li>
-                            A failed experiment can still teach you
-                            something.
+                            Eksperimen yang gagal tetap bisa
+                            mengajarkan sesuatu.
                         </li>
 
                         <li>
-                            Research takes patience.
+                            Penelitian membutuhkan kesabaran.
                         </li>
 
                         <li>
-                            Working with other people changes your idea.
+                            Bekerja bersama orang lain bisa mengubah
+                            cara kita melihat sebuah ide.
                         </li>
 
                         <li>
-                            Sometimes you need to start over.
+                            Terkadang kita memang harus memulai lagi.
                         </li>
 
                     </ol>
 
                     <p>
-                        And probably the most important one:
+                        Dan mungkin yang paling penting:
                     </p>
 
                     <div class="quote">
-                        Don't be afraid to ask "why?"
+                        Jangan takut untuk bertanya "kenapa?"
                     </div>
 
                 </div>
@@ -981,17 +903,17 @@ body {
             </article>
 
 
-            <!-- PHOTOS -->
+            <!-- FOTO -->
             <article class="post" id="photos">
 
                 <div class="post-header">
 
                     <div class="post-title">
-                        My Very Official Photo Archive™
+                        Arsip Foto Sangat Resmi™
                     </div>
 
                     <div class="post-date">
-                        updated whenever I remember
+                        diperbarui kalau ingat
                     </div>
 
                 </div>
@@ -999,8 +921,8 @@ body {
                 <div class="post-body">
 
                     <p>
-                        A collection of completely normal photographs
-                        from my KIR journey.
+                        Kumpulan foto yang sepenuhnya normal
+                        dari perjalanan KIR-ku.
                     </p>
 
                     <div style="
@@ -1011,24 +933,41 @@ body {
                     ">
 
                         <div class="photo" style="margin:0;">
+
                             <div class="photo-inner">
-                                PHOTO 01
+                                FOTO 01
                             </div>
-                            <small>kir_day.jpg</small>
+
+                            <small>
+                                kir_day.jpg
+                            </small>
+
                         </div>
 
-                        <div class="photo" style="margin:0;">
-                            <div class="photo-inner">
-                                PHOTO 02
-                            </div>
-                            <small>experiment.jpg</small>
-                        </div>
 
                         <div class="photo" style="margin:0;">
+
                             <div class="photo-inner">
-                                PHOTO 03
+                                FOTO 02
                             </div>
-                            <small>meeting.jpg</small>
+
+                            <small>
+                                eksperimen.jpg
+                            </small>
+
+                        </div>
+
+
+                        <div class="photo" style="margin:0;">
+
+                            <div class="photo-inner">
+                                FOTO 03
+                            </div>
+
+                            <small>
+                                pertemuan.jpg
+                            </small>
+
                         </div>
 
                     </div>
@@ -1038,17 +977,17 @@ body {
             </article>
 
 
-            <!-- ARCHIVE -->
+            <!-- ARSIP -->
             <article class="post" id="archive">
 
                 <div class="post-header">
 
                     <div class="post-title">
-                        Site Archive
+                        Arsip Jurnal
                     </div>
 
                     <div class="post-date">
-                        old stuff lives here
+                        hal-hal lama tinggal di sini
                     </div>
 
                 </div>
@@ -1060,33 +999,33 @@ body {
                     <ul>
 
                         <li>
-                            September — Welcome to my KIR Journal
+                            September — Selamat Datang di Jurnal KIR-ku
                         </li>
 
                         <li>
-                            September — Why I Joined KIR
+                            September — Kenapa Aku Bergabung dengan KIR?
                         </li>
 
                         <li>
-                            August — A Normal Afternoon at KIR
+                            Agustus — Sore Biasa di KIR
                         </li>
 
                         <li>
-                            August — The Experiment
+                            Agustus — Eksperimen yang Tidak Berjalan
                         </li>
 
                         <li>
-                            July — Things KIR Has Taught Me
+                            Juli — Hal-Hal yang Kiajarkan KIR Kepadaku
                         </li>
 
                     </ul>
 
                     <br>
 
-                    <b>older entries</b>
+                    <b>catatan yang lebih lama</b>
 
                     <p>
-                        coming soon... maybe.
+                        segera hadir... mungkin.
                     </p>
 
                 </div>
@@ -1094,23 +1033,24 @@ body {
             </article>
 
 
-            <!-- GUESTBOOK -->
+            <!-- BUKU TAMU -->
             <section class="guestbook" id="guestbook">
 
-                <b>★ YOU FOUND THE GUESTBOOK ★</b>
+                <b>★ KAMU MENEMUKAN BUKU TAMU ★</b>
 
                 <p>
-                    Thanks for stopping by my tiny corner of the internet!
+                    Terima kasih sudah mampir ke sudut kecil
+                    internetku!
                 </p>
 
                 <a href="mailto:your@email.com">
-                    [ SIGN MY GUESTBOOK ]
+                    [ ISI BUKU TAMU ]
                 </a>
 
                 <br><br>
 
                 <small>
-                    please don't spam :)
+                    jangan spam ya :)
                 </small>
 
             </section>
@@ -1127,7 +1067,7 @@ body {
         <div>
 
             <span class="badge">
-                BEST VIEWED
+                TAMPILAN TERBAIK
             </span>
 
             <span class="badge">
@@ -1135,23 +1075,24 @@ body {
             </span>
 
             <span class="badge">
-                KIR JOURNAL
+                JURNAL KIR
             </span>
 
         </div>
 
         <br>
 
-        © 2026 my little KIR journal
+        © 2026 jurnal kecil KIR-ku
 
         <br>
 
-        made by me, for me, and anyone curious enough to read it.
+        dibuat olehku, untukku, dan siapa pun
+        yang cukup penasaran untuk membacanya.
 
         <br><br>
 
         <span style="font-family:'Courier New', monospace;">
-            [ this page is permanently under construction ]
+            [ halaman ini selamanya dalam tahap pembangunan ]
         </span>
 
     </footer>
@@ -1162,7 +1103,7 @@ body {
 <script>
 
 /* =========================================================
-   OLD SCHOOL VISITOR COUNTER
+   KODE PENGUNJUNG
    ========================================================= */
 
 let visits = localStorage.getItem("kirJournalVisits");
@@ -1175,12 +1116,9 @@ if (!visits) {
 
 localStorage.setItem("kirJournalVisits", visits);
 
-document.getElementById("counter").textContent =
-    String(visits).padStart(6, "0");
-
 
 /* =========================================================
-   OLD SCHOOL SMOOTH-ish ANCHOR
+   NAVIGASI
    ========================================================= */
 
 document.querySelectorAll(".nav a").forEach(link => {
@@ -1209,3 +1147,8 @@ document.querySelectorAll(".nav a").forEach(link => {
 
 </body>
 </html>
+```
+
+**Catatan:** aku juga sekalian menghapus JavaScript penghitung pengunjung karena elemen **SITE STATS** yang memakai counter itu sudah dihapus. Jadi tidak ada kode counter yang tidak terpakai.
+
+Kalau mau, bagian isi jurnalnya juga bisa aku bikin **lebih personal dan terasa seperti website KIR milik kamu sendiri**, bukan sekadar template generik.
