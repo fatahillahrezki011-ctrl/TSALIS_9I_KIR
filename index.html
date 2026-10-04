@@ -2,1153 +2,1162 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>~* my little KIR journal *~</title>
 
-<title>~* jurnal kecil KIR-ku ~</title>
-
-<style>
-/* =========================================================
-   GAYA OLD WEB
-   ========================================================= */
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background:
-        linear-gradient(#d7d7d7 1px, transparent 1px),
-        linear-gradient(90deg, #d7d7d7 1px, transparent 1px);
-    background-size: 18px 18px;
-    background-color: #eeeeee;
-
-    color: #222;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 12px;
-}
-
-/* HALAMAN UTAMA */
-
-.page {
-    width: 760px;
-    margin: 18px auto;
-    background: white;
-    border: 2px solid #555;
-    box-shadow: 4px 4px 0 #888;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.header {
-    background: linear-gradient(#416b91, #173b5c);
-    color: white;
-    padding: 15px 18px 13px;
-    border-bottom: 3px solid #111;
-}
-
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.site-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 2px 2px #111;
-}
-
-.site-subtitle {
-    font-size: 11px;
-    margin-top: 3px;
-    color: #dcecff;
-}
-
-.header-date {
-    text-align: right;
-    font-family: "Courier New", monospace;
-    font-size: 11px;
-    color: #d7e8f8;
-}
-
-/* =========================================================
-   MARQUEE
-   ========================================================= */
-
-.marquee {
-    background: #ffffcc;
-    border-bottom: 1px solid #888;
-    color: #000080;
-    height: 24px;
-    line-height: 24px;
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: "Courier New", monospace;
-}
-
-.marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll 16s linear infinite;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    to {
-        transform: translateX(-100%);
+    html {
+      scroll-behavior: smooth;
     }
-}
-
-/* =========================================================
-   NAVIGASI
-   ========================================================= */
-
-.nav {
-    background: #cfcfcf;
-    padding: 5px;
-    border-bottom: 2px solid #777;
-    text-align: center;
-}
-
-.nav a {
-    display: inline-block;
-    padding: 5px 12px;
-    margin: 1px;
-
-    background: #e8e8e8;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #555;
-    border-bottom: 2px solid #555;
-
-    color: #000080;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 11px;
-}
-
-.nav a:active {
-    border-top: 2px solid #555;
-    border-left: 2px solid #555;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-}
-
-/* =========================================================
-   LAYOUT KONTEN
-   ========================================================= */
-
-.content {
-    display: grid;
-    grid-template-columns: 175px 1fr;
-    gap: 12px;
-    padding: 12px;
-}
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-.sidebar {
-    font-size: 11px;
-}
-
-.side-box {
-    margin-bottom: 12px;
-    border: 1px solid #777;
-    background: #f4f4f4;
-}
-
-.side-title {
-    background: #315a7d;
-    color: white;
-    font-weight: bold;
-    padding: 5px 7px;
-    font-size: 11px;
-}
-
-.side-content {
-    padding: 7px;
-    line-height: 1.5;
-}
-
-.side-content a {
-    color: #0000cc;
-}
-
-.side-content ul {
-    padding-left: 17px;
-    margin: 4px 0;
-}
-
-/* =========================================================
-   BLOG UTAMA
-   ========================================================= */
-
-.main {
-    min-width: 0;
-}
-
-.welcome {
-    border: 1px solid #999;
-    background: #f7f7f7;
-    padding: 10px;
-    margin-bottom: 12px;
-}
-
-.welcome h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: #173b5c;
-    font-size: 23px;
-    margin: 0 0 5px;
-}
-
-.welcome p {
-    margin: 5px 0;
-    line-height: 1.5;
-}
-
-/* =========================================================
-   POSTINGAN
-   ========================================================= */
-
-.post {
-    border: 1px solid #888;
-    margin-bottom: 15px;
-    background: #fff;
-}
-
-.post-header {
-    background: #dbe7f0;
-    border-bottom: 1px solid #999;
-    padding: 7px 9px;
-}
-
-.post-title {
-    color: #000080;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.post-date {
-    color: #555;
-    font-size: 10px;
-    font-family: "Courier New", monospace;
-    margin-top: 3px;
-}
-
-.post-body {
-    padding: 10px;
-    line-height: 1.65;
-}
-
-.post-body p {
-    margin-top: 0;
-}
-
-.post-body a {
-    color: #0000cc;
-}
-
-.signature {
-    color: #555;
-    font-family: "Comic Sans MS", cursive;
-    margin-top: 12px;
-}
-
-/* =========================================================
-   FOTO
-   ========================================================= */
-
-.photo {
-    border: 2px solid #777;
-    background: #ddd;
-    padding: 4px;
-    width: 180px;
-    margin: 8px auto;
-    text-align: center;
-    color: #555;
-    font-family: "Courier New", monospace;
-}
-
-.photo-inner {
-    height: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ccc,
-            #ccc 5px,
-            #ddd 5px,
-            #ddd 10px
-        );
-}
-
-/* =========================================================
-   KUTIPAN
-   ========================================================= */
-
-.quote {
-    margin: 10px 18px;
-    padding: 7px 10px;
-    border-left: 5px solid #315a7d;
-    background: #eef5fa;
-    font-family: Georgia, serif;
-    font-style: italic;
-}
-
-/* =========================================================
-   LIST
-   ========================================================= */
-
-.old-list {
-    background: #ffffdd;
-    border: 1px dashed #999;
-    padding: 8px 8px 8px 28px;
-}
-
-/* =========================================================
-   BUKU TAMU
-   ========================================================= */
-
-.guestbook {
-    text-align: center;
-    border: 2px dashed #888;
-    background: #fffef0;
-    padding: 10px;
-    margin-top: 15px;
-}
-
-.guestbook a {
-    color: #0000ee;
-    font-weight: bold;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-    border-top: 3px double #555;
-    background: #ddd;
-    text-align: center;
-    padding: 12px;
-    font-size: 10px;
-    color: #444;
-}
-
-.badge {
-    display: inline-block;
-    width: 88px;
-    height: 31px;
-    line-height: 31px;
-    margin: 4px;
-
-    background: #173b5c;
-    color: white;
-
-    border-top: 2px solid #8db4d2;
-    border-left: 2px solid #8db4d2;
-    border-right: 2px solid #111;
-    border-bottom: 2px solid #111;
-
-    font-family: "Courier New", monospace;
-    font-size: 9px;
-    font-weight: bold;
-}
-
-/* =========================================================
-   KEDIP
-   ========================================================= */
-
-.blink {
-    animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-    50% {
-        visibility: hidden;
-    }
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 800px) {
 
     body {
-        background: #eeeeee;
+      margin: 0;
+      padding: 20px 10px;
+      background-color: #d8d8d8;
+      background-image:
+        linear-gradient(#cfcfcf 1px, transparent 1px),
+        linear-gradient(90deg, #cfcfcf 1px, transparent 1px);
+      background-size: 20px 20px;
+      font-family: "Courier New", monospace;
+      color: #222;
+      font-size: 13px;
+    }
+
+    a {
+      color: #003c99;
     }
 
     .page {
-        width: calc(100% - 20px);
-        margin: 10px auto;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .header-top {
-        display: block;
+      width: 760px;
+      max-width: 100%;
+      margin: auto;
+      background: #fff;
+      border: 3px double #222;
+      box-shadow: 6px 6px 0 #777;
     }
 
-    .header-date {
-        text-align: left;
-        margin-top: 8px;
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: linear-gradient(#4d9be8, #155ca8);
+      color: white;
+      padding: 18px;
+      border-bottom: 3px solid #222;
+      text-align: center;
     }
 
-    .site-title {
-        font-size: 25px;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      text-shadow: 2px 2px #17456f;
+      letter-spacing: -1px;
     }
 
-    .content {
+    header p {
+      margin: 7px 0 0;
+      font-size: 12px;
+    }
+
+    .marquee {
+      background: #ffff00;
+      color: #000;
+      border-bottom: 2px solid #222;
+      padding: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 16s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      background: #e9e9e9;
+      border-bottom: 2px solid #222;
+      padding: 8px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 2px;
+      padding: 5px 9px;
+      background: linear-gradient(#fff, #d1d1d1);
+      border: 2px outset #aaa;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    nav a:hover {
+      background: #ffffcc;
+    }
+
+    nav a:active {
+      border-style: inset;
+    }
+
+    /* =========================
+       LAYOUT
+    ========================= */
+
+    .layout {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    aside {
+      border: 2px solid #222;
+      background: #f4f4f4;
+      align-self: start;
+    }
+
+    .side-title {
+      background: #003c99;
+      color: white;
+      padding: 5px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 2px solid #222;
+    }
+
+    .side-content {
+      padding: 10px;
+      line-height: 1.5;
+    }
+
+    .side-content p {
+      margin-top: 0;
+    }
+
+    .side-content ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .side-content li {
+      margin-bottom: 5px;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    /* =========================
+       POSTS
+    ========================= */
+
+    .post {
+      margin-bottom: 18px;
+      border: 2px solid #222;
+      background: #fff;
+    }
+
+    .post-title {
+      background: linear-gradient(#e8f3ff, #c7ddf5);
+      border-bottom: 2px solid #222;
+      padding: 8px 10px;
+    }
+
+    .post-title h2 {
+      margin: 0;
+      color: #003c99;
+      font-size: 18px;
+    }
+
+    .post-meta {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .post-body {
+      padding: 12px;
+      line-height: 1.7;
+    }
+
+    .post-body p {
+      margin-top: 0;
+      margin-bottom: 13px;
+    }
+
+    .post-body h3 {
+      color: #003c99;
+      font-size: 15px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      border-bottom: 1px dotted #777;
+      padding-bottom: 3px;
+    }
+
+    .quote {
+      margin: 14px 0;
+      padding: 10px;
+      background: #ffffcc;
+      border: 2px dashed #777;
+      font-style: italic;
+    }
+
+    .highlight {
+      background: #ffff00;
+      font-weight: bold;
+      padding: 1px 3px;
+    }
+
+    .mini-box {
+      margin: 12px 0;
+      padding: 10px;
+      background: #eef7ff;
+      border: 1px solid #777;
+    }
+
+    .mini-box strong {
+      color: #003c99;
+    }
+
+    /* =========================
+       PHOTO PLACEHOLDERS
+    ========================= */
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .photo {
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #eee,
+          #eee 10px,
+          #ddd 10px,
+          #ddd 20px
+        );
+      border: 2px dashed #777;
+      color: #555;
+      font-size: 11px;
+    }
+
+    /* =========================
+       GUESTBOOK
+    ========================= */
+
+    .guestbook {
+      border: 2px solid #222;
+      background: #f8f8f8;
+      padding: 12px;
+      margin-bottom: 18px;
+    }
+
+    .guestbook h2 {
+      margin-top: 0;
+      color: #003c99;
+      font-size: 17px;
+    }
+
+    .guestbook-note {
+      background: #ffffcc;
+      border: 1px dotted #777;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 3px double #222;
+      background: #e7e7e7;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 11px;
+      color: #444;
+    }
+
+    .badges {
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 7px;
+      margin: 2px;
+      border: 1px solid #222;
+      background: #fff;
+      font-size: 10px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 650px) {
+      body {
+        padding: 8px 4px;
+        font-size: 12px;
+      }
+
+      .page {
+        box-shadow: 3px 3px 0 #777;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+      .layout {
         grid-template-columns: 1fr;
-    }
+      }
 
-    .sidebar {
+      aside {
         order: 2;
-    }
+      }
 
-    .main {
+      main {
         order: 1;
-    }
+      }
 
-    .nav a {
-        margin-bottom: 3px;
+      nav a {
+        font-size: 11px;
+        padding: 5px 6px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<div class="page">
+  <div class="page">
 
-    <!-- HEADER -->
-    <header class="header">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <div class="header-top">
-
-            <div>
-
-                <div class="site-title">
-                    ~* jurnal kecil KIR-ku *~
-                </div>
-
-                <div class="site-subtitle">
-                    catatan, cerita & kenangan dari perjalanan KIR-ku
-                </div>
-
-            </div>
-
-            <div class="header-date">
-                aktif sejak 2026<br>
-                [ halaman pribadi ]
-            </div>
-
-        </div>
-
+    <header>
+      <h1>~* my little KIR journal *~</h1>
+      <p>catatan kecil tentang eksperimen, lomba, dan cerita-cerita KIR</p>
     </header>
 
-
-    <!-- MARQUEE -->
     <div class="marquee">
-
-        <span>
-            *** selamat datang di sudut kecil internetku! ***
-            terima kasih sudah berkunjung ke jurnal KIR-ku :)
-            &nbsp;&nbsp;&nbsp;
-            jangan lupa mampir ke buku tamu!!
-        </span>
-
+      <span>★ selamat datang di jurnal KIR-ku ★ ilmunya dapat, serunya juga dapat ★</span>
     </div>
 
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-    <!-- NAVIGASI -->
-    <nav class="nav">
-
-        <a href="#home">BERANDA</a>
-        <a href="#about">TENTANG AKU</a>
-        <a href="#stories">CERITA</a>
-        <a href="#photos">FOTO</a>
-        <a href="#archive">ARSIP</a>
-        <a href="#guestbook">BUKU TAMU</a>
-
+    <nav>
+      <a href="#home">BERANDA</a>
+      <a href="#about">TENTANG AKU</a>
+      <a href="#stories">CERITA</a>
+      <a href="#photos">FOTO</a>
+      <a href="#archive">ARSIP</a>
+      <a href="#guestbook">BUKU TAMU</a>
     </nav>
 
-
-    <!-- KONTEN -->
-    <div class="content">
-
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-            <!-- TENTANG AKU -->
-            <div class="side-box" id="about">
-
-                <div class="side-title">
-                    :: TENTANG AKU
-                </div>
-
-                <div class="side-content">
-
-                    <b>halo!</b><br><br>
-
-                    aku cuma seorang pelajar
-                    yang menghabiskan sebagian
-                    waktuku untuk melakukan
-                    berbagai hal menarik di KIR.
-
-                    <br><br>
-
-                    ini bukan website resmi KIR.
-
-                    <br><br>
-
-                    ini cuma jurnal kecil
-                    pribadiku tentang
-                    pengalaman selama
-                    mengikuti KIR.
-
-                </div>
-
-            </div>
-
-
-            <!-- SAAT INI -->
-            <div class="side-box">
-
-                <div class="side-title">
-                    :: SAAT INI
-                </div>
-
-                <div class="side-content">
-
-                    <b>sedang:</b><br>
-                    mengurus KIR<br><br>
-
-                    <b>belajar:</b><br>
-                    penelitian & eksperimen<br><br>
-
-                    <b>mendengarkan:</b><br>
-                    playlist random<br><br>
-
-                    <b>suasana hati:</b><br>
-                    <span class="blink">_</span>
-
-                </div>
-
-            </div>
-
-        </aside>
-
-
-        <!-- MAIN -->
-        <main class="main" id="home">
-
-
-            <!-- SELAMAT DATANG -->
-            <section class="welcome">
-
-                <h1>
-                    selamat datang di sudut kecilku :)
-                </h1>
-
-                <p>
-                    Hai! Kamu entah bagaimana bisa menemukan
-                    jurnal KIR pribadiku. Di sini aku menulis
-                    berbagai pengalaman, pemikiran, eksperimen,
-                    cerita, dan hal-hal yang mungkin akan
-                    kulupakan kalau tidak dicatat.
-                </p>
-
-                <p>
-                    KIR menjadi salah satu tempat di mana aku
-                    bisa mencoba berbagai hal, melakukan kesalahan,
-                    belajar sesuatu, dan sesekali bertanya-tanya
-                    kenapa eksperimenku memutuskan untuk tidak
-                    bekerja sama.
-                </p>
-
-                <p>
-                    Jadi ya... selamat datang!
-                </p>
-
-            </section>
-
-
-            <!-- POST 1 -->
-            <article class="post" id="kir">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Selamat Datang di Jurnal KIR-ku!
-                    </div>
-
-                    <div class="post-date">
-                        diposting: September 2026
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Aku memutuskan untuk membuat website kecil
-                        ini karena ada terlalu banyak hal yang terjadi
-                        selama KIR yang sebenarnya layak untuk diingat.
-                    </p>
-
-                    <p>
-                        Tidak selalu tentang pencapaian besar.
-                        Kadang hanya sebuah diskusi random,
-                        eksperimen yang gagal, ide yang tiba-tiba
-                        muncul, atau sore yang panjang hanya untuk
-                        mencoba memahami sesuatu.
-                    </p>
-
-                    <div class="quote">
-                        "Terkadang bagian paling berguna dari penelitian
-                        adalah mengetahui bahwa ide pertama kita ternyata salah."
-                    </div>
-
-                    <p>
-                        Kurang lebih, itulah alasan website ini dibuat.
-                    </p>
-
-                    <p class="signature">
-                        — aku, yang mungkin sedang menulis ini
-                        daripada mengerjakan eksperimen
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 2 -->
-            <article class="post" id="stories">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Kenapa Aku Bergabung dengan KIR?
-                    </div>
-
-                    <div class="post-date">
-                        diposting: September 2026
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Sejujurnya, aku tidak benar-benar tahu
-                        seperti apa KIR ketika pertama kali
-                        ikut bergabung.
-                    </p>
-
-                    <p>
-                        Awalnya, kata "penelitian" terdengar
-                        sangat serius.
-                        Ada laporan. Data. Eksperimen.
-                        Istilah-istilah yang terdengar rumit.
-                    </p>
-
-                    <p>
-                        Tapi setelah benar-benar mengikutinya,
-                        aku sadar bahwa penelitian juga bisa
-                        dimulai dari sesuatu yang sangat sederhana:
-                    </p>
-
-                    <ul class="old-list">
-
-                        <li>
-                            "Kenapa hal ini bisa terjadi?"
-                        </li>
-
-                        <li>
-                            "Apakah ini bisa diperbaiki?"
-                        </li>
-
-                        <li>
-                            "Bagaimana kalau aku mencoba ini?"
-                        </li>
-
-                        <li>
-                            "Oke... kenapa ini malah gagal?"
-                        </li>
-
-                    </ul>
-
-                    <p>
-                        Dan entah bagaimana, pertanyaan-pertanyaan
-                        sederhana itu bisa berubah menjadi sebuah
-                        proyek nyata.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 3 -->
-            <article class="post">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Sore Biasa di KIR
-                    </div>
-
-                    <div class="post-date">
-                        diposting: Agustus 2026
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Sore biasa di KIR sebenarnya tidak terlihat
-                        terlalu istimewa kalau dilihat dari luar.
-                    </p>
-
-                    <p>
-                        Sebuah meja.
-                        Beberapa kertas.
-                        Beberapa HP atau laptop.
-                        Orang-orang berdiskusi tentang berbagai ide.
-                        Seseorang mencari informasi.
-                    </p>
-
-                    <div class="photo">
-
-                        <div class="photo-inner">
-                            [ foto di sini ]
-                        </div>
-
-                        <small>
-                            IMG_0001.JPG
-                        </small>
-
-                    </div>
-
-                    <p>
-                        Tapi justru itu salah satu hal yang aku suka.
-                    </p>
-
-                    <p>
-                        Selalu ada sesuatu yang terjadi.
-                        Kadang semua orang fokus.
-                        Kadang kami benar-benar tidak tahu harus
-                        melakukan apa.
-                        Dan kadang percakapan yang awalnya benar-benar
-                        random malah berubah menjadi ide terbaik hari itu.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 4 -->
-            <article class="post">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Eksperimen yang Tidak Berjalan Sesuai Rencana
-                    </div>
-
-                    <div class="post-date">
-                        diposting: Agustus 2026
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Ini mungkin salah satu hal paling penting
-                        yang diajarkan KIR kepadaku.
-                    </p>
-
-                    <p>
-                        Sebuah eksperimen tidak selalu berhasil.
-                    </p>
-
-                    <p>
-                        Kadang hasilnya aneh.
-                        Kadang bahan tidak berperilaku seperti
-                        yang kita harapkan.
-                        Kadang angka-angkanya tidak masuk akal.
-                    </p>
-
-                    <p>
-                        Dan kadang kita hanya menatap hasilnya selama
-                        lima menit sambil berpikir:
-                    </p>
-
-                    <div class="quote">
-                        "...oke, tadi sebenarnya apa yang terjadi?"
-                    </div>
-
-                    <p>
-                        Tapi itu juga bagian dari proses.
-                    </p>
-
-                    <p>
-                        Daripada langsung menyebutnya sebagai kegagalan,
-                        kita bisa mencoba mencari tahu kenapa hal itu
-                        terjadi.
-                        Mungkin ada yang salah dengan metode.
-                        Mungkin variabelnya belum dikontrol.
-                        Mungkin ide awalnya memang perlu diubah.
-                    </p>
-
-                    <p>
-                        Dan tiba-tiba, eksperimen yang gagal tadi
-                        berubah menjadi sesuatu yang bisa kita pelajari.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 5 -->
-            <article class="post">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Hal-Hal yang Kiajarkan KIR Kepadaku
-                    </div>
-
-                    <div class="post-date">
-                        diposting: Juli 2026
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Kalau aku harus membuat daftar kecil tentang
-                        hal-hal yang sudah kupelajari dari KIR,
-                        mungkin isinya akan seperti ini:
-                    </p>
-
-                    <ol class="old-list">
-
-                        <li>
-                            Jangan menganggap ide pertama pasti benar.
-                        </li>
-
-                        <li>
-                            Catat semuanya.
-                        </li>
-
-                        <li>
-                            Data lebih berguna daripada sekadar menebak.
-                        </li>
-
-                        <li>
-                            Eksperimen yang gagal tetap bisa
-                            mengajarkan sesuatu.
-                        </li>
-
-                        <li>
-                            Penelitian membutuhkan kesabaran.
-                        </li>
-
-                        <li>
-                            Bekerja bersama orang lain bisa mengubah
-                            cara kita melihat sebuah ide.
-                        </li>
-
-                        <li>
-                            Terkadang kita memang harus memulai lagi.
-                        </li>
-
-                    </ol>
-
-                    <p>
-                        Dan mungkin yang paling penting:
-                    </p>
-
-                    <div class="quote">
-                        Jangan takut untuk bertanya "kenapa?"
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- FOTO -->
-            <article class="post" id="photos">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Arsip Foto Sangat Resmi™
-                    </div>
-
-                    <div class="post-date">
-                        diperbarui kalau ingat
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <p>
-                        Kumpulan foto yang sepenuhnya normal
-                        dari perjalanan KIR-ku.
-                    </p>
-
-                    <div style="
-                        display:flex;
-                        flex-wrap:wrap;
-                        justify-content:center;
-                        gap:10px;
-                    ">
-
-                        <div class="photo" style="margin:0;">
-
-                            <div class="photo-inner">
-                                FOTO 01
-                            </div>
-
-                            <small>
-                                kir_day.jpg
-                            </small>
-
-                        </div>
-
-
-                        <div class="photo" style="margin:0;">
-
-                            <div class="photo-inner">
-                                FOTO 02
-                            </div>
-
-                            <small>
-                                eksperimen.jpg
-                            </small>
-
-                        </div>
-
-
-                        <div class="photo" style="margin:0;">
-
-                            <div class="photo-inner">
-                                FOTO 03
-                            </div>
-
-                            <small>
-                                pertemuan.jpg
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- ARSIP -->
-            <article class="post" id="archive">
-
-                <div class="post-header">
-
-                    <div class="post-title">
-                        Arsip Jurnal
-                    </div>
-
-                    <div class="post-date">
-                        hal-hal lama tinggal di sini
-                    </div>
-
-                </div>
-
-                <div class="post-body">
-
-                    <b>2026</b>
-
-                    <ul>
-
-                        <li>
-                            September — Selamat Datang di Jurnal KIR-ku
-                        </li>
-
-                        <li>
-                            September — Kenapa Aku Bergabung dengan KIR?
-                        </li>
-
-                        <li>
-                            Agustus — Sore Biasa di KIR
-                        </li>
-
-                        <li>
-                            Agustus — Eksperimen yang Tidak Berjalan
-                        </li>
-
-                        <li>
-                            Juli — Hal-Hal yang Kiajarkan KIR Kepadaku
-                        </li>
-
-                    </ul>
-
-                    <br>
-
-                    <b>catatan yang lebih lama</b>
-
-                    <p>
-                        segera hadir... mungkin.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- BUKU TAMU -->
-            <section class="guestbook" id="guestbook">
-
-                <b>★ KAMU MENEMUKAN BUKU TAMU ★</b>
-
-                <p>
-                    Terima kasih sudah mampir ke sudut kecil
-                    internetku!
-                </p>
-
-                <a href="mailto:your@email.com">
-                    [ ISI BUKU TAMU ]
-                </a>
-
-                <br><br>
-
-                <small>
-                    jangan spam ya :)
-                </small>
-
-            </section>
-
-
-        </main>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div>
-
-            <span class="badge">
-                TAMPILAN TERBAIK
-            </span>
-
-            <span class="badge">
-                HTML 4.01
-            </span>
-
-            <span class="badge">
-                JURNAL KIR
-            </span>
+    <div class="layout">
+
+      <!-- =========================
+           SIDEBAR
+      ========================== -->
+
+      <aside id="about">
+
+        <div class="side-title">
+          :: TENTANG AKU
+        </div>
+
+        <div class="side-content">
+
+          <p>
+            hai! ini adalah jurnal kecilku
+            tentang perjalanan mengikuti KIR
+            di Spendas.
+          </p>
+
+          <p>
+            aku mengikuti KIR bersama
+            <b>Angel</b> dan <b>Ihsan</b>.
+          </p>
+
+          <p>
+            di sini aku nyimpen cerita tentang:
+          </p>
+
+          <ul>
+            <li>eksperimen</li>
+            <li>inovasi</li>
+            <li>perlombaan</li>
+            <li>OSN</li>
+            <li>hal-hal random di KIR</li>
+          </ul>
+
+          <p>
+            bukan blog resmi KIR.
+            cuma tempat buat nyimpen
+            cerita dan pengalaman :)
+          </p>
 
         </div>
 
-        <br>
+      </aside>
 
-        © 2026 jurnal kecil KIR-ku
+      <!-- =========================
+           MAIN CONTENT
+      ========================== -->
 
-        <br>
+      <main id="home">
 
-        dibuat olehku, untukku, dan siapa pun
-        yang cukup penasaran untuk membacanya.
+        <!-- POST 1 -->
 
-        <br><br>
+        <article class="post" id="stories">
 
-        <span style="font-family:'Courier New', monospace;">
-            [ halaman ini selamanya dalam tahap pembangunan ]
-        </span>
+          <div class="post-title">
+            <h2>Perjalanan Kecilku di KIR</h2>
+            <div class="post-meta">
+              ditulis oleh aku · cerita KIR
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              KIR adalah ekstrakurikuler kedua yang aku ikuti
+              di Spendas setelah basket. Awalnya aku nggak terlalu
+              tahu bakal seperti apa kegiatan KIR. Yang ada di
+              pikiranku waktu itu, KIR mungkin cuma tentang
+              penelitian, membuat laporan, atau melakukan eksperimen.
+            </p>
+
+            <p>
+              Tapi setelah benar-benar mengikutinya, ternyata KIR
+              jauh lebih seru dari yang aku bayangkan.
+            </p>
+
+            <p>
+              Di KIR, aku menemukan banyak kesempatan untuk
+              mencoba hal-hal baru, baik dalam bidang akademik
+              maupun inovasi. Ada kegiatan yang membuat kita
+              berpikir, ada eksperimen yang membuat kita penasaran,
+              dan ada juga kesempatan untuk membawa sebuah ide
+              sampai menjadi sesuatu yang benar-benar bisa
+              diperlombakan.
+            </p>
+
+            <div class="quote">
+              "kadang kita cuma perlu mencoba sesuatu dulu
+              untuk tahu ternyata seseru itu."
+            </div>
+
+            <h3>★ KIR, Eskul Kedua yang Aku Ikuti</h3>
+
+            <p>
+              Kalau dipikir-pikir, aku nggak menyangka kalau KIR
+              bakal memberikan sebanyak ini pengalaman baru.
+              Setelah basket, KIR menjadi eskul kedua yang aku ikuti
+              di Spendas.
+            </p>
+
+            <p>
+              Awalnya mungkin terasa seperti salah satu kegiatan
+              sekolah biasa. Tapi semakin sering mengikuti kegiatan,
+              semakin kelihatan kalau ternyata banyak hal yang
+              bisa dilakukan di sini.
+            </p>
+
+            <p>
+              Bukan cuma duduk dan mendengarkan materi, tapi juga
+              mencoba langsung apa yang dipelajari.
+            </p>
+
+            <h3>★ Dari Ide Jadi Inovasi</h3>
+
+            <p>
+              Salah satu pengalaman yang paling aku ingat adalah
+              ketika aku bersama <b>Angel dan Ihsan</b> mengembangkan
+              sebuah inovasi berupa lakban biodegradable berbahan
+              dasar singkong atau cassava.
+            </p>
+
+            <p>
+              Inovasi tersebut sekarang sedang kami ikutkan
+              dalam <b>Gelar Inovasi Daerah</b>.
+            </p>
+
+            <p>
+              Dari awal mencari ide, menentukan bahan, melakukan
+              percobaan, sampai memikirkan bagaimana produk tersebut
+              bisa dikembangkan, semuanya menjadi pengalaman baru
+              buat kami bertiga.
+            </p>
+
+            <p>
+              Membuat inovasi ternyata nggak semudah hanya memiliki
+              sebuah ide.
+            </p>
+
+            <p>
+              Setelah mendapatkan ide, masih ada banyak hal yang
+              harus dipikirkan. Apakah bahannya cocok? Bagaimana
+              cara membuatnya? Apakah hasilnya bisa digunakan?
+              Apa yang masih kurang?
+            </p>
+
+            <p>
+              Pertanyaan-pertanyaan seperti itu akhirnya membuat
+              prosesnya menjadi jauh lebih panjang daripada yang
+              awalnya aku bayangkan.
+            </p>
+
+            <div class="mini-box">
+              <strong>proyek kami sekarang:</strong><br>
+              lakban biodegradable berbahan dasar singkong
+              yang sedang dikembangkan untuk Gelar Inovasi Daerah.
+            </div>
+
+            <p>
+              Kadang hasil percobaan belum sesuai dengan yang
+              diharapkan. Kadang ada bagian yang harus diperbaiki.
+              Kadang kami harus berdiskusi lagi untuk mencari
+              cara yang lebih baik.
+            </p>
+
+            <p>
+              Tapi justru dari proses itu aku belajar bahwa
+              membuat sesuatu memang membutuhkan kesabaran dan
+              kemauan untuk terus mencoba.
+            </p>
+
+            <p>
+              Apalagi karena kami bertiga mengerjakannya bersama.
+              Ada Angel, ada Ihsan, dan ada aku. Kami bisa saling
+              bertukar pendapat dan membantu ketika ada bagian
+              yang terasa sulit.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- POST 2 -->
+
+        <article class="post">
+
+          <div class="post-title">
+            <h2>Bukan Cuma Inovasi</h2>
+            <div class="post-meta">
+              tentang lomba, OSN, dan hal-hal yang dipelajari
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              Salah satu hal yang membuat KIR menarik adalah
+              banyaknya kesempatan untuk mengikuti perlombaan.
+            </p>
+
+            <p>
+              Di sini kita nggak cuma belajar materi, tapi juga
+              bisa mengembangkan ide menjadi sesuatu yang benar-benar
+              bisa dibawa ke kompetisi.
+            </p>
+
+            <h3>★ Gelar Inovasi Daerah</h3>
+
+            <p>
+              Untuk sekarang, salah satu pengalaman terbesar yang
+              sedang aku jalani bersama Angel dan Ihsan adalah
+              mengikuti Gelar Inovasi Daerah dengan inovasi
+              lakban biodegradable berbahan dasar singkong.
+            </p>
+
+            <p>
+              Buatku, ini bukan cuma tentang ikut lomba.
+              Proses sebelum lombanya juga menjadi bagian yang
+              menarik.
+            </p>
+
+            <p>
+              Kami harus memikirkan produk, melakukan percobaan,
+              mempersiapkan penjelasan, dan memahami kembali
+              alasan kenapa inovasi tersebut dibuat.
+            </p>
+
+            <p>
+              Jadi ketika ada orang yang bertanya tentang produk
+              kami, kami nggak cuma tahu jawabannya dari hafalan,
+              tapi juga karena memang sudah mengalami prosesnya.
+            </p>
+
+            <h3>★ Kesempatan Mengikuti OSN</h3>
+
+            <p>
+              Selain lomba inovasi, KIR juga rutin memberikan
+              kesempatan untuk mengikuti lomba akademik seperti
+              OSN setiap tahunnya.
+            </p>
+
+            <p>
+              Ini membuat KIR terasa nggak cuma berfokus pada
+              eksperimen atau pembuatan produk.
+            </p>
+
+            <p>
+              Buat yang suka bidang akademik, ada kesempatan
+              untuk mengembangkan kemampuan dan mencoba bersaing
+              dalam kompetisi.
+            </p>
+
+            <p>
+              Menurutku, pengalaman seperti ini penting karena
+              setiap lomba punya tantangan yang berbeda.
+            </p>
+
+            <p>
+              Dalam inovasi kita dituntut untuk membuat dan
+              mengembangkan sesuatu. Sedangkan dalam lomba
+              akademik kita lebih banyak dituntut untuk memahami
+              konsep, berpikir logis, dan menyelesaikan masalah.
+            </p>
+
+            <div class="quote">
+              "satu eskul, tapi pengalaman yang bisa didapat
+              ternyata banyak banget."
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- POST 3 -->
+
+        <article class="post">
+
+          <div class="post-title">
+            <h2>Belajar Tapi Nggak Terasa Kayak Belajar</h2>
+            <div class="post-meta">
+              eksperimen kecil yang ternyata banyak ngajarnya
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              Pembelajaran di KIR juga masih banyak berhubungan
+              dengan apa yang dipelajari di kelas.
+            </p>
+
+            <p>
+              Bedanya, di KIR kami sering mendapatkan kesempatan
+              untuk melihat langsung bagaimana suatu konsep bekerja.
+            </p>
+
+            <p>
+              Jadi materi yang sebelumnya mungkin cuma terlihat
+              sebagai teori bisa menjadi lebih mudah dipahami
+              ketika langsung dipraktikkan.
+            </p>
+
+            <p>
+              Buatku, cara belajar seperti ini terasa lebih
+              menyenangkan karena kita nggak cuma mendengar
+              penjelasan, tetapi juga ikut melakukan sesuatu.
+            </p>
+
+            <h3>★ Mobil dari Botol Bekas</h3>
+
+            <p>
+              Salah satu eksperimen yang pernah dilakukan adalah
+              eksperimen tentang bagaimana udara dapat memberikan
+              dorongan pada benda.
+            </p>
+
+            <p>
+              Kami membuat mainan mobil menggunakan botol bekas
+              dan kemudian melihat bagaimana udara dapat membuat
+              mobil tersebut bergerak.
+            </p>
+
+            <div class="photo-grid">
+
+              <div class="photo">
+                [ FOTO EKSPERIMEN MOBIL DARI BOTOL BEKAS ]
+              </div>
+
+              <div class="photo">
+                [ FOTO SAAT MENCOBA EKSPERIMEN ]
+              </div>
+
+            </div>
+
+            <p>
+              Kelihatannya memang sederhana.
+              Tapi dari eksperimen tersebut kami bisa memahami
+              bahwa benda-benda yang ada di sekitar kita sebenarnya
+              bisa digunakan untuk mempelajari konsep sains.
+            </p>
+
+            <p>
+              Botol bekas yang biasanya dianggap sudah tidak
+              berguna ternyata masih bisa dimanfaatkan menjadi
+              alat eksperimen yang menarik.
+            </p>
+
+            <p>
+              Dari sini aku jadi merasa kalau belajar sains
+              sebenarnya nggak selalu harus menggunakan alat yang
+              mahal atau laboratorium yang lengkap.
+            </p>
+
+            <p>
+              Kadang benda-benda sederhana yang ada di sekitar
+              kita sudah cukup untuk menunjukkan bagaimana sebuah
+              konsep bekerja.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- POST 4 -->
+
+        <article class="post">
+
+          <div class="post-title">
+            <h2>Eksperimen Terbaru: Sistem Hidraulik</h2>
+            <div class="post-meta">
+              air + suntikan + kardus = sesuatu yang ternyata seru
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              Eksperimen terbaru yang kami lakukan juga nggak
+              kalah seru, yaitu membuat sistem hidraulik sederhana.
+            </p>
+
+            <p>
+              Kami menggunakan air, suntikan, kardus, dan beberapa
+              bahan lain yang mudah ditemukan.
+            </p>
+
+            <p>
+              Dari bahan-bahan sederhana tersebut, kami mencoba
+              membuat sebuah sistem yang dapat menghasilkan gerakan
+              menggunakan tekanan air.
+            </p>
+
+            <div class="mini-box">
+              <strong>bahan sederhananya:</strong><br><br>
+              • air<br>
+              • suntikan<br>
+              • kardus<br>
+              • beberapa bahan pendukung lainnya
+            </div>
+
+            <p>
+              Saat pertama kali melihat alatnya, mungkin kelihatannya
+              seperti sebuah mainan sederhana.
+            </p>
+
+            <p>
+              Tapi setelah mengetahui cara kerjanya, ternyata ada
+              konsep fisika yang bisa dipelajari dari sana.
+            </p>
+
+            <p>
+              Bagian paling menyenangkan dari eksperimen seperti ini
+              adalah ketika kita bisa melihat hasilnya secara langsung.
+            </p>
+
+            <p>
+              Kita nggak cuma membaca bahwa tekanan air dapat
+              digunakan untuk menghasilkan gerakan, tetapi benar-benar
+              membuat sistemnya sendiri dan melihat bagaimana benda
+              tersebut bekerja.
+            </p>
+
+            <div class="photo-grid">
+
+              <div class="photo">
+                [ FOTO SISTEM HIDRAULIK ]
+              </div>
+
+              <div class="photo">
+                [ FOTO SAAT MERAKIT ]
+              </div>
+
+            </div>
+
+            <p>
+              Kalau berhasil, ada rasa puas tersendiri karena hasilnya
+              berasal dari sesuatu yang kita buat sendiri.
+            </p>
+
+            <p>
+              Kalau belum berhasil, kita juga jadi penasaran untuk
+              mencari tahu apa yang salah dan bagaimana cara
+              memperbaikinya.
+            </p>
+
+            <p>
+              Dan menurutku, justru bagian itulah yang membuat
+              eksperimen menjadi menarik.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- POST 5 -->
+
+        <article class="post">
+
+          <div class="post-title">
+            <h2>Hal-Hal yang Diajarkan KIR Kepadaku</h2>
+            <div class="post-meta">
+              ternyata bukan cuma soal sains
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              Dari kegiatan-kegiatan yang sudah aku jalani,
+              aku mulai merasa bahwa belajar nggak harus selalu
+              dilakukan dengan cara duduk di kelas dan membaca buku.
+            </p>
+
+            <p>
+              Kadang kita justru bisa mendapatkan pemahaman yang
+              lebih jelas ketika langsung mencoba sesuatu.
+            </p>
+
+            <p>
+              KIR membuatku melihat bahwa sains sebenarnya ada
+              di banyak hal sederhana yang ada di sekitar kita.
+            </p>
+
+            <p>
+              Mulai dari udara, air, tekanan, gerakan, sampai
+              bahan-bahan yang mungkin selama ini kita anggap
+              biasa saja.
+            </p>
+
+            <h3>★ Belajar Mencoba</h3>
+
+            <p>
+              Salah satu hal yang menurutku paling penting adalah
+              keberanian untuk mencoba.
+            </p>
+
+            <p>
+              Sebuah ide nggak harus langsung sempurna.
+              Yang penting adalah berani memulainya terlebih dahulu.
+            </p>
+
+            <p>
+              Dari percobaan pertama, kita bisa tahu apa yang kurang.
+              Dari kesalahan, kita bisa belajar.
+              Dari hasil yang belum sesuai, kita bisa mencari
+              cara lain.
+            </p>
+
+            <h3>★ Belajar Bekerja Sama</h3>
+
+            <p>
+              Mengembangkan inovasi bersama Angel dan Ihsan juga
+              membuatku belajar tentang kerja sama.
+            </p>
+
+            <p>
+              Ketika mengerjakan sesuatu bertiga, tentu setiap orang
+              bisa memiliki pendapat yang berbeda.
+            </p>
+
+            <p>
+              Tapi dari situ justru kita belajar bagaimana
+              mendengarkan pendapat orang lain, berdiskusi,
+              dan mencari keputusan yang paling masuk akal.
+            </p>
+
+            <h3>★ Belajar dari Kesalahan</h3>
+
+            <p>
+              Eksperimen juga mengajarkan satu hal yang cukup
+              sederhana: nggak semua percobaan akan langsung berhasil.
+            </p>
+
+            <p>
+              Dan itu nggak masalah.
+            </p>
+
+            <p>
+              Kalau sesuatu gagal, berarti ada sesuatu yang bisa
+              dipelajari dari kegagalan tersebut.
+            </p>
+
+            <div class="quote">
+              "gagal sekali bukan berarti selesai.
+              mungkin cuma berarti harus coba dengan cara lain."
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- POST 6 -->
+
+        <article class="post" id="archive">
+
+          <div class="post-title">
+            <h2>Kenapa Aku Suka KIR?</h2>
+            <div class="post-meta">
+              mungkin karena semuanya terasa nyata
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              Kalau ditanya apa yang paling aku suka dari KIR,
+              mungkin jawabannya adalah karena kegiatan di sini
+              terasa seperti gabungan antara belajar dan bermain.
+            </p>
+
+            <p>
+              Kita tetap mendapatkan ilmu, tetapi cara mendapatkannya
+              nggak selalu terasa serius.
+            </p>
+
+            <p>
+              Kadang kita harus berpikir.
+              Kadang harus mencoba.
+              Kadang harus memperbaiki sesuatu.
+              Kadang juga bisa gagal dan mengulanginya lagi.
+            </p>
+
+            <p>
+              Tapi semua itu tetap terasa menyenangkan karena kita
+              bisa melihat hasil dari apa yang kita lakukan sendiri.
+            </p>
+
+            <p>
+              Menurutku, ada perbedaan antara mengetahui sesuatu
+              dan benar-benar mencoba sesuatu.
+            </p>
+
+            <p>
+              Kita mungkin bisa membaca bahwa udara dapat memberikan
+              tekanan, atau bahwa tekanan air dapat digunakan untuk
+              menghasilkan gerakan.
+            </p>
+
+            <p>
+              Tapi ketika kita membuat eksperimennya sendiri dan
+              melihat hasilnya secara langsung, pengetahuan itu
+              terasa lebih nyata.
+            </p>
+
+            <p>
+              Mungkin itu alasan kenapa aku mulai menikmati kegiatan
+              KIR.
+            </p>
+
+            <p>
+              Bukan karena setiap kegiatan selalu mudah.
+              Bukan juga karena setiap eksperimen selalu berhasil.
+            </p>
+
+            <p>
+              Tapi karena selalu ada sesuatu yang bisa dipelajari
+              dari setiap kegiatan.
+            </p>
+
+            <div class="quote">
+              <b>ilmunya dapat, serunya juga dapat.</b>
+            </div>
+
+            <p>
+              Dan mungkin kalimat sederhana itu yang paling cocok
+              untuk menggambarkan pengalamanku sejauh ini di KIR.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- FOTO -->
+
+        <section class="post" id="photos">
+
+          <div class="post-title">
+            <h2>Foto-Foto KIR</h2>
+            <div class="post-meta">
+              tempat buat nyimpen dokumentasi kegiatan
+            </div>
+          </div>
+
+          <div class="post-body">
+
+            <p>
+              bagian ini nantinya bisa diisi foto-foto asli
+              dari kegiatan KIR.
+            </p>
+
+            <div class="photo-grid">
+
+              <div class="photo">
+                [ FOTO AKU + ANGEL + IHSAN ]
+              </div>
+
+              <div class="photo">
+                [ FOTO PROYEK LAKBAN ]
+              </div>
+
+              <div class="photo">
+                [ FOTO EKSPERIMEN MOBIL ]
+              </div>
+
+              <div class="photo">
+                [ FOTO EKSPERIMEN HIDRAULIK ]
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- GUESTBOOK -->
+
+        <section class="guestbook" id="guestbook">
+
+          <h2>★ BUKU TAMU ★</h2>
+
+          <div class="guestbook-note">
+            kalau kamu nyasar sampai sini,
+            makasih udah baca jurnal KIR-ku :)
+          </div>
+
+          <p>
+            mungkin suatu hari nanti isi halaman ini bakal
+            bertambah lagi.
+          </p>
+
+          <p>
+            lebih banyak eksperimen, lebih banyak lomba,
+            lebih banyak cerita, dan mungkin lebih banyak
+            kegagalan juga.
+          </p>
+
+          <p>
+            tapi yaudah.
+            namanya juga proses.
+          </p>
+
+          <p>
+            <b>see you in the next experiment!</b>
+          </p>
+
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+      <div>
+        dibuat dengan sedikit HTML,
+        sedikit CSS,
+        dan banyak cerita KIR.
+      </div>
+
+      <div class="badges">
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">KIR</span>
+        <span class="badge">SCIENCE</span>
+        <span class="badge">OLD WEB</span>
+      </div>
+
+      <div style="margin-top: 8px;">
+        © 2026 my little KIR journal
+      </div>
 
     </footer>
 
-</div>
+  </div>
 
+  <script>
+    // smooth scrolling untuk navigasi
+    document.querySelectorAll('nav a').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        const targetId = this.getAttribute('href');
 
-<script>
+        if (targetId && targetId.startsWith('#')) {
+          const target = document.querySelector(targetId);
 
-/* =========================================================
-   KODE PENGUNJUNG
-   ========================================================= */
-
-let visits = localStorage.getItem("kirJournalVisits");
-
-if (!visits) {
-    visits = 1;
-} else {
-    visits = parseInt(visits) + 1;
-}
-
-localStorage.setItem("kirJournalVisits", visits);
-
-
-/* =========================================================
-   NAVIGASI
-   ========================================================= */
-
-document.querySelectorAll(".nav a").forEach(link => {
-
-    link.addEventListener("click", function(e) {
-
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
-
-        if (target) {
-
-            e.preventDefault();
+          if (target) {
+            event.preventDefault();
 
             target.scrollIntoView({
-                behavior: "smooth"
+              behavior: 'smooth',
+              block: 'start'
             });
-
+          }
         }
-
+      });
     });
-
-});
-
-</script>
+  </script>
 
 </body>
 </html>
 ```
-
-**Catatan:** aku juga sekalian menghapus JavaScript penghitung pengunjung karena elemen **SITE STATS** yang memakai counter itu sudah dihapus. Jadi tidak ada kode counter yang tidak terpakai.
-
-Kalau mau, bagian isi jurnalnya juga bisa aku bikin **lebih personal dan terasa seperti website KIR milik kamu sendiri**, bukan sekadar template generik.
