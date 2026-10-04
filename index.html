@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>BLOG</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            zoom: 1.75;
+            margin: 0;
+            padding: 20px 10px;
+            background-color: #c9bda9;
+            background-image:
+                linear-gradient(rgba(92, 72, 52, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(92, 72, 52, 0.07) 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: "Courier New", monospace;
+            color: #3f392f;
+            font-size: 13px;
+        }
+
+        a {
+            color: #675646;
+        }
+
+        .page {
+            width: 760px;
+            max-width: 100%;
+            margin: auto;
+            background: #f4eddf;
+            border: 3px double #5d5041;
+            box-shadow: 6px 6px 0 rgba(70, 58, 45, 0.35);
+            position: relative;
+            overflow: visible;
+        }
+
+        header {
+            background: linear-gradient(#766653, #5f5142);
+            color: #f7f0e3;
+            padding: 18px;
+            border-bottom: 3px solid #4e4438;
+            text-align: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            text-shadow: 2px 2px rgba(45, 38, 31, 0.45);
+            letter-spacing: -1px;
+        }
+
+        header p {
+            margin: 7px 0 0;
+            font-size: 12px;
+            color: #e8ddcc;
+        }
+
+        .marquee {
+            background: #d8c6a8;
+            color: #4c4032;
+            border-bottom: 2px solid #6b5a48;
+            padding: 4px;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: bold;
+            position: relative;
+            z-index: 20;
+        }
+
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 16s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        nav {
+            background: #e7ddcd;
+            border-bottom: 2px solid #665747;
+            padding: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 2px;
+            padding: 5px 9px;
+            background: linear-gradient(#f7f0e4, #ded1bd);
+            border: 2px outset #b8a993;
+            color: #4b4034;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        nav a:hover {
+            background: #d8c7aa;
+            color: #3f352a;
+        }
+
+        nav a:active {
+            border-style: inset;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            padding: 12px;
+            position: relative;
+            z-index: 20;
+        }
+
+        aside {
+            border: 2px solid #665747;
+            background: #eee4d3;
+            align-self: start;
+            position: relative;
+            z-index: 25;
+        }
+
+        .side-title {
+            background: #75624f;
+            color: #f7f0e3;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #5b4d3e;
+        }
+
+        .side-content {
+            padding: 10px;
+            line-height: 1.5;
+        }
+
+        .side-content p {
+            margin-top: 0;
+        }
+
+        .side-content ul {
+            padding-left: 18px;
+            margin-bottom: 0;
+        }
+
+        .side-content li {
+            margin-bottom: 5px;
+        }
+
+        main {
+            min-width: 0;
+            position: relative;
+            z-index: 25;
+        }
+
+        .post {
+            margin-bottom: 18px;
+            border: 2px solid #6a5a49;
+            background: #f8f1e5;
+            position: relative;
+            z-index: 25;
+        }
+
+        .post-title {
+            background: linear-gradient(#e8dece, #d9cbb8);
+            border-bottom: 2px solid #756351;
+            padding: 8px 10px;
+        }
+
+        .post-title h2 {
+            margin: 0;
+            color: #5d4b3a;
+            font-size: 18px;
+        }
+
+        .post-meta {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #766b5e;
+        }
+
+        .post-body {
+            padding: 12px;
+            line-height: 1.7;
+        }
+
+        .post-body p {
+            margin-top: 0;
+            margin-bottom: 13px;
+        }
+
+        .post-body h3 {
+            color: #6b5642;
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            border-bottom: 1px dotted #9b8b76;
+            padding-bottom: 3px;
+        }
+
+        .quote {
+            margin: 14px 0;
+            padding: 10px;
+            background: #e9dfcf;
+            border: 2px dashed #9a8974;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: #d8c59e;
+            font-weight: bold;
+            padding: 1px 3px;
+        }
+
+        .mini-box {
+            margin: 12px 0;
+            padding: 10px;
+            background: #eee5d6;
+            border: 1px solid #9b8b76;
+        }
+
+        .mini-box strong {
+            color: #6a5340;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .photo {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            background:
+                repeating-linear-gradient(45deg,
+                    #e6ddcf,
+                    #e6ddcf 10px,
+                    #ddd2c2 10px,
+                    #ddd2c2 20px);
+            border: 2px dashed #9a8974;
+            color: #776b5c;
+            font-size: 11px;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            min-height: 120px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .guestbook {
+            border: 2px solid #6a5a49;
+            background: #eee4d4;
+            padding: 12px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 25;
+        }
+
+        .guestbook h2 {
+            margin-top: 0;
+            color: #624e3d;
+            font-size: 17px;
+        }
+
+        .guestbook-note {
+            background: #e5d8c5;
+            border: 1px dotted #968572;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            border-top: 3px double #5e5143;
+            background: linear-gradient(#e9e0d2, #d8ccba);
+            text-align: center;
+            padding: 18px 12px 15px;
+            font-size: 11px;
+            color: #665b50;
+            box-shadow: inset 0 2px 0 #f8f2e8;
+            position: relative;
+            z-index: 20;
+        }
+
+        .badges {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 0;
+            border: 1px solid #756452;
+            background: #eee5d7;
+            color: #51463a;
+            font-size: 10px;
+            text-decoration: none;
+            box-shadow: 2px 2px 0 #a99b87;
+        }
+
+        a.badge:hover {
+            background: #d9c8aa;
+            color: #40362c;
+            box-shadow: 1px 1px 0 #897966;
+        }
+
+        a.badge:active {
+            position: relative;
+            top: 1px;
+            left: 1px;
+            box-shadow: none;
+        }
+
+        .lab-decorations {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 100;
+            overflow: visible;
+        }
+
+        .lab-tool {
+            position: absolute;
+            display: block;
+            height: auto;
+            max-width: none;
+            object-fit: contain;
+            user-select: none;
+            -webkit-user-drag: none;
+            filter: drop-shadow(2px 3px 0 rgba(63, 57, 47, 0.14));
+            opacity: 0.92;
+        }
+
+        .lab-tool-2 {
+            top: 405px;
+            left: -82px;
+            width: 105px;
+            transform: rotate(-7deg);
+        }
+
+        .lab-tool-4 {
+            top: 1050px;
+            left: -92px;
+            width: 120px;
+            transform: rotate(-8deg);
+        }
+
+        .lab-tool-6 {
+            top: 1820px;
+            left: -88px;
+            width: 110px;
+            transform: rotate(-5deg);
+        }
+
+        .lab-tool-8 {
+            top: 2635px;
+            left: -98px;
+            width: 125px;
+            transform: rotate(-6deg);
+        }
+
+        .lab-tool-10 {
+            top: 3505px;
+            left: -88px;
+            width: 108px;
+            transform: rotate(-9deg);
+        }
+
+        .lab-tool-12 {
+            bottom: 88px;
+            left: -95px;
+            width: 118px;
+            transform: rotate(-7deg);
+        }
+
+        .lab-tool-1 {
+            top: 70px;
+            right: -82px;
+            width: 105px;
+            transform: rotate(8deg);
+        }
+
+        .lab-tool-3 {
+            top: 715px;
+            right: -92px;
+            width: 120px;
+            transform: rotate(5deg);
+        }
+
+        .lab-tool-5 {
+            top: 1435px;
+            right: -88px;
+            width: 108px;
+            transform: rotate(10deg);
+        }
+
+        .lab-tool-7 {
+            top: 2215px;
+            right: -76px;
+            width: 95px;
+            transform: rotate(9deg);
+        }
+
+        .lab-tool-9 {
+            top: 3070px;
+            right: -82px;
+            width: 105px;
+            transform: rotate(7deg);
+        }
+
+        .lab-tool-11 {
+            top: 3940px;
+            right: -88px;
+            width: 110px;
+            transform: rotate(6deg);
+        }
+
+        @media (max-width: 900px) {
+            .lab-tool-1 {
+                right: -55px;
+                width: 78px;
+            }
+
+            .lab-tool-2 {
+                left: -55px;
+                width: 78px;
+            }
+
+            .lab-tool-3 {
+                right: -60px;
+                width: 88px;
+            }
+
+            .lab-tool-4 {
+                left: -62px;
+                width: 90px;
+            }
+
+            .lab-tool-5 {
+                right: -56px;
+                width: 80px;
+            }
+
+            .lab-tool-6 {
+                left: -58px;
+                width: 82px;
+            }
+
+            .lab-tool-7 {
+                right: -50px;
+                width: 70px;
+            }
+
+            .lab-tool-8 {
+                left: -65px;
+                width: 92px;
+            }
+
+            .lab-tool-9 {
+                right: -55px;
+                width: 78px;
+            }
+
+            .lab-tool-10 {
+                left: -57px;
+                width: 80px;
+            }
+
+            .lab-tool-11 {
+                right: -58px;
+                width: 82px;
+            }
+
+            .lab-tool-12 {
+                left: -60px;
+                width: 88px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .page {
+                overflow: hidden;
+            }
+
+            .lab-decorations {
+                opacity: 0.8;
+            }
+
+            .lab-tool-1 {
+                right: -20px;
+                width: 50px;
+            }
+
+            .lab-tool-2 {
+                left: -20px;
+                width: 48px;
+            }
+
+            .lab-tool-3 {
+                right: -22px;
+                width: 54px;
+            }
+
+            .lab-tool-4 {
+                left: -23px;
+                width: 58px;
+            }
+
+            .lab-tool-5 {
+                right: -20px;
+                width: 50px;
+            }
+
+            .lab-tool-6 {
+                left: -21px;
+                width: 52px;
+            }
+
+            .lab-tool-7 {
+                right: -18px;
+                width: 44px;
+            }
+
+            .lab-tool-8 {
+                left: -24px;
+                width: 60px;
+            }
+
+            .lab-tool-9 {
+                right: -20px;
+                width: 48px;
+            }
+
+            .lab-tool-10 {
+                left: -20px;
+                width: 50px;
+            }
+
+            .lab-tool-11 {
+                right: -21px;
+                width: 52px;
+            }
+
+            .lab-tool-12 {
+                left: -23px;
+                width: 58px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .lab-tool {
+                opacity: 0.65;
+            }
+
+            .lab-tool-1,
+            .lab-tool-3,
+            .lab-tool-5,
+            .lab-tool-7,
+            .lab-tool-9,
+            .lab-tool-11 {
+                right: -15px;
+                width: 38px;
+            }
+
+            .lab-tool-2,
+            .lab-tool-4,
+            .lab-tool-6,
+            .lab-tool-8,
+            .lab-tool-10,
+            .lab-tool-12 {
+                left: -15px;
+                width: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="lab-decorations" aria-hidden="true">
+
+            <img class="lab-tool lab-tool-1"
+                src="https://upload.wikimedia.org/wikipedia/commons/0/09/Beaker_for_Lab.png" alt="">
+
+            <img class="lab-tool lab-tool-2"
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Erlenmeyer_Flask_%28Filled%29_%28NIH_BioArt_631_-_660913%29.png"
+                alt="">
+
+            <img class="lab-tool lab-tool-3"
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Microscopio_optico_imagem_sem_fundo.png"
+                alt="">
+
+            <img class="lab-tool lab-tool-4"
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Petri_Dish_%28NIH_BioArt_404%29.png" alt="">
+
+            <img class="lab-tool lab-tool-5"
+                src="https://upload.wikimedia.org/wikipedia/commons/5/59/Pipette_%28NIH_BioArt_408%29.png" alt="">
+
+            <img class="lab-tool lab-tool-6"
+                src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Equipment_-_Bunsen_burner_--_Smart-Servier.png"
+                alt="">
+
+            <img class="lab-tool lab-tool-7" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Test_tube.png"
+                alt="">
+
+            <img class="lab-tool lab-tool-8" src="image/1.png" alt="">
+
+            <img class="lab-tool lab-tool-9" src="image/2.png" alt="">
+
+            <img class="lab-tool lab-tool-10"
+                src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Round_bottomed_flask_half_full.png" alt="">
+
+            <img class="lab-tool lab-tool-11" src="image/3.png" alt="">
+
+            <img class="lab-tool lab-tool-12"
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Test_Tube_Rack_%28NIH_BioArt_516_-_636583%29.png"
+                alt="">
+
+        </div>
+
+        <header>
+
+            <h1>BLOG ABOUT KIR</h1>
+
+            <p>
+                FATAHILLAH REZKI TSALIS
+            </p>
+
+        </header>
+
+        <div class="marquee">
+
+            <span>
+                ★ selamat datang di blog kir milik DR.FATAHILLAH REZKI TSALIS ★
+            </span>
+
+        </div>
+
+        <div class="layout">
+
+            <aside id="about">
+
+                <div class="side-title">
+                    ABOUT SAYA
+                </div>
+
+                <div class="side-content">
+
+                    <p>
+                        hai! ini adalah blog kecilku tentang perjalanan saya ikut kir di Spendas.
+                    </p>
+
+                    <p>
+                        di sini i simpan cerita tentang:
+                    </p>
+
+                    <ul>
+                        <li>eksperimen</li>
+                        <li>inovasi</li>
+                        <li>perlombaan</li>
+                        <li>randomnyah eskul kir</li>
+                    </ul>
+
+                    <p>
+                        bukan official blog kir inimah. cuma tempat buat nyimpen cerita dan tugas informatikah:)
+                    </p>
+
+                </div>
+
+            </aside>
+
+            <main id="home">
+
+                <article class="post" id="stories">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Perjalanan saya di kir
+                        </h2>
+
+                        <div class="post-meta">
+                            ditulis oleh eki · cerita KIR
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            kir adalah ekstrakurikuler kedua yang aku ikuti di Spendas setelah basket.
+                            Awalnya mah aku ga terlalu tahu bakal kaya apa kegiatan eskul ini.
+                            Yang ada di pikiranku waktu itu, kir mungkin cuma tentang penelitian,
+                            belajar, atau melakukan eksperimen.
+                        </p>
+
+                        <p>
+                            Tapi setelah bener" ikut, ternyata kir seru juga...
+                        </p>
+
+                        <p>
+                            Di kir, aku nemu buanyak buanget kesempatan untuk nyoba hal" baru,
+                            di bidang akademik maupun inovasi. ada aja kegiatan yang membuat kita mikir,
+                            ada eksperimen yang membuat kita penasaran, dan ada juga kesempatan untuk
+                            membawa sebuah ide sampai menjadi sesuatu yang bener" bisa dilombain.
+                        </p>
+
+                        <div class="quote">
+
+                            <p>
+                                “Pada dasarnya hidup ini seru, kecuali kau keluhkan.”
+                            </p>
+
+                            <p>
+                                -Pidi Baiq, Asbunayah (2017)
+                            </p>
+
+                        </div>
+
+                        <h3>
+                            ★ kirrr, Eskul Kedua yang Aku Ikuti
+                        </h3>
+
+                        <p>
+                            Kalau dipikir", aku ngga nyangka samsek kalau kir bakal memberikan banyak bgt
+                            lho ini pengalaman baru... Setelah basket yng cuma sebentar, kir malah jadi eskul
+                            kedua yang aku ikutin di Spendas.
+                        </p>
+
+                        <p>
+                            Awalnya mahh mungkin terasa seperti salah satu kegiatan sekolah biasa,
+                            Tapi semakin sering mengikuti kegiatan, semakin kelihatan kalau ternyata banyak
+                            hal yang bisa dilakukan di sini. :>
+                        </p>
+
+                        <p>
+                            Bukan cuma yang duduk dan denger materi, tapi juga nyoba langsung apa yang dh dipelajarin.
+                        </p>
+
+                        <h3>
+                            ★ Dari Ide Jadi Inovasi
+                        </h3>
+
+                        <p>
+                            Salah satu pengalaman yang paling ak ingat adalah ketika aku bersama
+                            <b>Angel dan Ihsan</b> ngembangin sebuah inovasi berupa lakban biodegradable
+                            berbahan dasar singkong atau cassava.
+                        </p>
+
+                        <p>
+                            Inovasi tersebut sekarang sedang kami ikutkan dalam
+                            <b>Gelar Inovasi Daerah</b> dan <b>OPSI</b> .
+                        </p>
+
+                        <p>
+                            Dari awal nyari ide, nentuin bahan, melakukan percobaan, sampai mikirin gimana
+                            yah produk tersebut bisa dikembangkan, semuanya menjadi pengalaman baru
+                            buat kami bertiga.
+                        </p>
+
+                        <p>
+                            Membuat inovasi ternyata aslinya mah ngga semudah hanya memiliki sebuah ide.
+                        </p>
+
+                        <p>
+                            Setelah mendapatkan ide, masih ada banyak hal yang harus dipikirin.
+                            Apa bahannya cocok? gimana cara buatnya? Apa hasilnya bisa digunakan?
+                            Apa yang masih kurang?
+                        </p>
+
+                        <p>
+                            Pertanyaan-pertanyaan seperti itu akhirnya membuat prosesnya menjadi jauh lebih
+                            panjang daripada yang awalnya aku bayangkan.
+                        </p>
+
+                        <div class="mini-box">
+
+                            <strong>Inovasi kami:</strong><br>
+
+                            <a href="lakban.pdf" target="_blank" class="button">
+                                PROPOSAL LAKBAN BIODEGRADABLE BASED ON CASSAVA
+                            </a>
+
+                        </div>
+
+                        <p>
+                            tapi kadang mah hasil percobaan belum sesuai dengan yang diharapkan,
+                            jdinya trial error lah bahasanya. Kadang ada bagian yang harus dbenerin.
+                            Kadang kami harus diskusi lagi untuk mencari cara yang lebih baik.
+                        </p>
+
+                        <p>
+                            Tapi justru dari proses itu aku belajar bahwa membuat sesuatu itu emang
+                            membutuhkan kesabaran dan kemauan untuk terus mencoba.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="post">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Bukan Cuma Inovasi
+                        </h2>
+
+                        <div class="post-meta">
+                            tentang lomba, OSN, dan hal" yang dipelajari
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Salah satu hal yang membuat kir jdi menarik adalah banyak kesempatan
+                            untuk ikut perlombaan.
+                        </p>
+
+                        <p>
+                            Di sini kita ga cuma belajar materi, tapi juga bisa ngembangin ide
+                            menjadi sesuatu yang bener" bisa dibawa ke kompetisi.
+                        </p>
+
+                        <h3>
+                            ★ Gelar Inovasi Daerah
+                        </h3>
+
+                        <p>
+                            Untuk sekarang, salah satu pengalaman terbesar yang aku jalanin sma
+                            ANgel dan Ihsan adalah ikut Gelar Inovasi Daerah dengan inovasi
+                            lakban biodegradable berbahan dasar singkong.
+                        </p>
+
+                        <p>
+                            Buat ak, ini bukan cuma tentang ikut lomba.
+                            Proses sebelum lombanya juga jadi bagian yang menarik.
+                        </p>
+
+                        <p>
+                            Kami harus mikirin produk, melakukan percobaan, siapin penjelasan,
+                            dan fahami kembali alasan kenawhy inovasi tersebut dibuat.
+                        </p>
+
+                        <p>
+                            Jadi ketika ada orang yang bertanya tentang produk kami,
+                            kami ngga cuma tahu jawabannya dari hafalan, tapi juga karena
+                            memang sudah mengalami prosesnya.
+                        </p>
+
+                        <h3>
+                            ★ Kesempatan Mengikuti OSN
+                        </h3>
+
+                        <p>
+                            Selain lomba inovasi, kir juga rutin memberikan kesempatan untuk
+                            mengikuti lomba akademik seperti OSN setiap tahunnya.
+                        </p>
+
+                        <p>
+                            Ini membuat kir terasa ga cuma berfokus pada eksperimen atau pembuatan produk.
+                        </p>
+
+                        <p>
+                            Buat yang suka bidang akademik, ada kesempatan untuk mengembangkan
+                            kemampuan dan mencoba bersaing dalam kompetisi.
+                        </p>
+
+                        <p>
+                            Menurut aku, pengalaman seperti ini penting karena setiap lomba
+                            punya tantangan yang berbeda.
+                        </p>
+
+                        <p>
+                            Dalam inovasi kita dituntut untuk membuat dan ngembangin sesuatu.
+                            Sedangkan dalam lomba akademik kita lebih banyak dituntut untuk
+                            fahamin konsep, berpikir logis, dan problem solving.
+                        </p>
+
+                        <div class="quote">
+                            "kir itu seru kata eki"
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="post">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Belajar Tapi Ga Kerasa Kaya Belajar
+                        </h2>
+
+                        <div class="post-meta">
+                            eksperimen kecil yang ternyata banyak ngajarnya
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Pembelajaran di kir juga masih banyak berhubungan dengan apa yang dipelajari di kelas.
+                        </p>
+
+                        <p>
+                            Bedanya, di kir kami sering dapet kesempatan untuk melihat langsung
+                            bagaimana suatu konsep bekerja.
+                        </p>
+
+                        <p>
+                            Jdi materi yang sebelumnya mungkin cuma terlihat sebagai teori bisa
+                            menjadi lebih mudah dipahami ketika langsung dipraktikkan.
+                        </p>
+
+                        <p>
+                            Buat saya, cara belajar gini terasa lebih menyenangkan karena kita
+                            ga cuma denger penjelasan, tetapi juga ikut praktekin something.
+                        </p>
+
+                        <h3>
+                            ★ Mobil dari Botol Bekas
+                        </h3>
+
+                        <p>
+                            Salah satu eksperimen yang pernah dilakukan adalah eksperimen tentang
+                            bagaimana udara bisa memberikan dorongan pada benda.
+                        </p>
+
+                        <p>
+                            Kami membuat mainan mobil dari botol bekas dan kemudian melihat bagaimana
+                            udara dapat membuat mobil tersebut bergerak.
+                        </p>
+
+                        <div class="photo-grid">
+
+                            <div class="photo">
+                                <img src="image/pmb.jpeg" alt="FOTO EKSPERIMEN MOBIL DARI BOTOL BEKAS">
+                            </div>
+
+                            <div class="photo">
+                                <img src="image/hmb.jpeg" alt="FOTO SAAT MENCOBA EKSPERIMEN">
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Kelihatannya emank sederhana.
+                            Tapi dari eksperimen tersebut kami bisa memahami bahwa benda" yang ada
+                            di sekitar kita sebenarnya bisa digunakan untuk mempelajari konsep sains.
+                        </p>
+
+                        <p>
+                            Botol bekas yang biasanya dianggap sudah ga berguna ternyata masih bisa
+                            dimanfaatkan menjadi alat eksperimen yang menarik.
+                        </p>
+
+                        <p>
+                            Dari sini aku jadi ngerasa kalau belajar sains sebenarnya ga selalu harus
+                            menggunakan alat yang mahal atau laboratorium yang lengkap.
+                        </p>
+
+                        <p>
+                            Kadang benda" sederhana yang ada di sekitar kita udah cukup untuk nunjukin
+                            gimana sebuah konsep bekerja.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="post">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Eksperimen Terbaru: Sistem Hidraulik
+                        </h2>
+
+                        <div class="post-meta">
+                            air + suntikan + kardus = sesuatu yang keren
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Eksperimen terbaru yang kami lakukan juga ga kalah seru,
+                            yaitu membuat sistem hidraulik sederhana.
+                        </p>
+
+                        <p>
+                            Kami menggunakan air, suntikan, kardus, dan beberapa bahan lain
+                            yang mudah ditemukan.
+                        </p>
+
+                        <p>
+                            Dari bahan-bahan sederhana tersebut, kami mencoba membuat sebuah
+                            sistem yang dapat menghasilkan gerakan menggunakan tekanan air.
+                        </p>
+
+                        <div class="mini-box">
+
+                            <strong>bahan sederhananya:</strong><br><br>
+
+                            • air<br>
+                            • suntikan<br>
+                            • kardus<br>
+                            • beberapa bahan pendukung lainnya
+
+                        </div>
+
+                        <p>
+                            Waktu pertama kali ngeliat hasilnya, mungkin kelihatannya kaya sebuah mainan sederhana.
+                        </p>
+
+                        <p>
+                            Tapi setelah tau cara kerjanya, ternyata ada konsep fisika yang bisa dipelajarin dri sana.
+                        </p>
+
+                        <p>
+                            Bagian paling menyenangkan dari eksperimen kaya gini adalah ketika kita
+                            bisa liat hasilnya secara langsung.
+                        </p>
+
+                        <p>
+                            Kita ga cuma baca bahwa tekanan air dapat digunakan untuk menghasilkan
+                            gerakan, tapi bener" membuat sistemnya sendiri dan ngeliat gimana sih
+                            benda tersebut bekerja.
+                        </p>
+
+                        <div class="photo-grid">
+
+                            <div class="photo">
+                                <img src="image/hhd.png" alt="FOTO SISTEM HIDRAULIK">
+                            </div>
+
+                            <div class="photo">
+                                <img src="image/phd.png" alt="FOTO SAAT MERAKIT">
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Kalau berhasil, ada rasa puasnya karena hasilnya berasal dari sesuatu yang kita buat
+                            sendiri.
+                        </p>
+
+                        <p>
+                            Kalau belum berhasil, kita juga jadi penasaran untuk mencari tahu apa yang salah
+                            dan bagaimana cara memperbaikinya.
+                        </p>
+
+                        <p>
+                            Dan menurutku, malah bagian itu yang membuat eksperimen menjadi seru dan menarik.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="post">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Hal" yang Diajarkan Kir Kepada Saya
+                        </h2>
+
+                        <div class="post-meta">
+                            ternyata bukan cuma soal sains
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Dari kegiatan" yang sudah aku jalanin, aku mulai merasa bahwa belajar ga harus
+                            selalu dilakukan dengan cara duduk di kelas dan membaca buku.
+                        </p>
+
+                        <p>
+                            Kadang kita justru bisa dapat pemahaman yang lebih jelas ketika langsung mencoba sesuatu.
+                        </p>
+
+                        <p>
+                            Kir membuat saya melihat bahwa sains sbetulnya ada di banyak hal sederhana
+                            yang ada di sekitar kita.
+                        </p>
+
+                        <p>
+                            Mulai dari udara, air, tekanan, gerakan, sampai bahan" yang mungkin selama
+                            ini kita anggap biasa saja.
+                        </p>
+
+                        <h3>
+                            ★ Belajar Mencoba
+                        </h3>
+
+                        <p>
+                            Salah satu hal yang menurutku paling penting adalah keberanian untuk mencoba.
+                        </p>
+
+                        <p>
+                            Sebuah ide ga harus langsung sempurna.
+                            Yang penting adalah berani mulai first.
+                        </p>
+
+                        <p>
+                            Dari percobaan pertama, kita bisa tahu apa yang kurang.
+                            Dari kesalahan, kita bisa belajar.
+                            Dari hasil yang belum sesuai, kita bisa mencari cara lain.
+                        </p>
+
+                        <h3>
+                            ★ Belajar Bekerja Sama
+                        </h3>
+
+                        <p>
+                            Mengembangkan inovasi bersama Tesalo Angel dan Ihsan juga membuat saya belajar tentang kerja
+                            sama.
+                        </p>
+
+                        <p>
+                            Ketika mengerjakan sesuatu bertiga, tentu setiap orang bisa memiliki pendapat yang berbeda.
+                        </p>
+
+                        <p>
+                            Tapi dari situ malah kita belajar gimana cara denger pendapat orang lain,
+                            berdiskusi, dan mencari keputusan yang paling masuk akal.
+                        </p>
+
+                        <h3>
+                            ★ Belajar dari Kesalahan
+                        </h3>
+
+                        <p>
+                            Eksperimen juga ngajarin satu hal yang cukup sederhana:
+                            ga semua percobaan bakal langsung berhasil.
+                        </p>
+
+                        <p>
+                            Dan itu ga masalah.
+                        </p>
+
+                        <p>
+                            Kalau sesuatu gagal, berarti ada sesuatu yang bisa dipelajarin dari kegagalan tersebut.
+                        </p>
+
+                        <div class="quote">
+                            "gagal bukan berarti selesai.
+                            mungkin cuma berarti harus coba dengan cara lain."
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="post" id="archive">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Kenapa Saya Suka KIR?
+                        </h2>
+
+                        <div class="post-meta">
+                            mungkin karena semuanya terasa nyata???????? idonowww
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <p>
+                            Kalau ditanya apa yang paling aku suka dari kir,
+                            maybe jawabannya itu karena kegiatan di sini terasa kaya gabungan
+                            antara belajar dan main.
+                        </p>
+
+                        <p>
+                            Kita tetap dapet ilmu, tapi cara dapetinnya ga selalu rasanya serius.
+                        </p>
+
+                        <p>
+                            Kadang kita harus berpikir.
+                            Kadang harus mencoba.
+                            Kadang harus fix something.
+                            Kadang juga bisa gagal dan mengulanginya lagi.
+                        </p>
+
+                        <p>
+                            Tapi semua itu tetep kerasa seru sebab kita bisa ngelihat hasil dari
+                            apa yang kita lakukan sendiri.
+                        </p>
+
+                        <p>
+                            Menurut saya, ada perbedaan antara mengetahui sesuatu dan bener" nyoba something.
+                        </p>
+
+                        <p>
+                            Kita mungkin bisa baca bahwa udara dapat ngasih tekanan,
+                            atau bahwa tekanan air dapat digunakan untuk ngehasilin gerakan.
+                        </p>
+
+                        <p>
+                            Tapi ketika kita buat eksperimennya sendiri dan liat hasilnya langsung,
+                            pengetahuan itu kerasanya lebih nyata.
+                        </p>
+
+                        <p>
+                            Mungkin itu alasan knapa aku mulai menikmati kegiatan kir.
+                        </p>
+
+                        <p>
+                            Bukan karena setiap kegiatan selalu mudah.
+                            Bukan juga karena setiap eksperimen selalu berhasil.
+                        </p>
+
+                        <p>
+                            Tapi karena selalu ada sesuatu yang bisa dipelajari dari setiap kegiatan.
+                        </p>
+
+                        <div class="quote">
+
+                            <b>
+                                ilmu dapet, seru juga dapet.
+                            </b>
+
+                        </div>
+
+                        <p>
+                            Dan mungkin kalimat sederhana itu yang paling cocok untuk gambarin
+                            my experiences sejauh ini di kir.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <section class="post" id="photos">
+
+                    <div class="post-title">
+
+                        <h2>
+                            Foto" kir
+                        </h2>
+
+                        <div class="post-meta">
+                            dokum kegiatan
+                        </div>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        <div class="photo-grid">
+
+                            <div class="photo">
+                                <img src="image/eki.jpeg" alt="FOTO AKU + ANGEL + IHSAN">
+                            </div>
+
+                            <div class="photo">
+                                <img src="image/k.jpeg" alt="FOTO PROYEK LAKBAN">
+                            </div>
+
+                            <div class="photo">
+                                <img src="image/hmb.jpeg" alt="FOTO EKSPERIMEN MOBIL">
+                            </div>
+
+                            <div class="photo">
+                                <img src="image/hhd.png" alt="FOTO EKSPERIMEN HIDRAULIK">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="guestbook" id="guestbook">
+
+                    <h2>
+                        ★ DONE ★
+                    </h2>
+
+                    <div class="guestbook-note">
+                        kalau kamu beres sampai sini,
+                        makasih udah baca my mini blog kir aku :)
+                    </div>
+
+                    <p>
+                        mungkin someday isi halaman ini bakal nambah lagi.
+                    </p>
+
+                    <p>
+                        lebih banyak eksperimen, lebih banyak lomba,
+                        lebih banyak cerita, dan mungkin lebih banyak
+                        kegagalan juga.
+                    </p>
+
+                    <p>
+                        tapi yaudala.
+                        namanya juga proses.
+                    </p>
+
+                    <p>
+                        <b>
+                            see u babaaaaayyyyyyyyyyyyyyyyyyyyyyyyyyyyyy.............
+                        </b>
+                    </p>
+
+                </section>
+
+            </main>
+
+        </div>
+
+        <footer>
+
+            <div class="badges">
+
+                <a href="https://wa.me/6288214580991" target="_blank" rel="noopener noreferrer" class="badge">
+
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    088214580991
+
+                </a>
+
+                <a href="https://instagram.com/tsalis.11" target="_blank" rel="noopener noreferrer" class="badge">
+
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    tsalis.11
+
+                </a>
+
+            </div>
+
+            <div style="margin-top: 8px;">
+                © 2026 WEBSITE EKI
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(function (link) {
+
+            link.addEventListener('click', function (event) {
+
+                const targetId = this.getAttribute('href');
+
+                if (targetId && targetId.startsWith('#')) {
+
+                    const target = document.querySelector(targetId);
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                    }
+
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
